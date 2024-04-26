@@ -1,0 +1,3 @@
+$("#missionStatementPlaceholder").text(
+	"Hi, I'm Matthew! I am a Computer Science student at the University of Central Florida, with an extensive background in fullstack web development. My goal as a software engineer is to create code with perspective and purpose - and to ultimately, make the world a more human friendly place. Here's how I've been working towards that goal: Hi, I'm Matthew! I am a Computer Science student at the University of Central Florida, with an extensive background in fullstack web development. My goal as a software engineer is to create code with perspective and purpose - and to ultimately, make the world a more human friendly place. Here's how I've been working towards that goal:"
+);

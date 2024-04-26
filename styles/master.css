@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+	--main-background-color: #0f0f0f;
+	--glassy-background-color: rgba(0, 0, 0, 0.4);
+	--first-accent-color: #23d183;
+	--second-accent-color: #06ace8;
+	--main-gradient: linear-gradient(
+		90deg,
+		var(--first-accent-color) 0%,
+		var(--second-accent-color) 100%
+	);
+	--main-looping-gradient: linear-gradient(
+		90deg,
+		var(--first-accent-color) 0%,
+		var(--second-accent-color) 37.5%,
+		var(--first-accent-color) 62.5%,
+		var(--second-accent-color) 100%
+	);
+	--title-font: "Share Tech Mono ", monospace;
+	--header-font: "Poppins", sans-serif;
+	--body-font: "Nunito", sans-serif;
+	--foreground-color: #f0f0f0;
+}
+
+body {
+	margin: 0;
+	background-color: var(--main-background-color);
+	color: var(--foreground-color);
+	font-family: var(--body-font);
+	height: 300vh;
+}
+
+#backgroundCanvas {
+	filter: blur(100px);
+	background-image: var(--main-looping-gradient);
+	background-size: 400% 100%;
+	background-position: 0 0;
+	background-attachment: fixed;
+	animation: loopBg 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: -100;
+	top: 0;
+	left: 0;
+}
+
+@keyframes loopBg {
+	0% {
+		background-position: 0 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	text-shadow: 1px 1px 0px black;
+	z-index: 100;
+}
+
+#navButtons {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+}
+
+.navButton {
+	font-family: var(--title-font);
+	font-size: 1rem;
+	color: var(--foreground-color);
+	text-decoration: none;
+	font-family: var(--title-font);
+	padding: 1rem;
+	cursor: pointer;
+	font-weight: bold;
+	transition: color 0.15s ease-in-out;
+}
+
+#navLogo {
+	height: 1rem;
+	fill: var(--foreground-color);
+	padding: 1rem;
+	cursor: pointer;
+}
+
+#navLogo:hover {
+	fill: var(--second-accent-color);
+}
+
+#navLogo:active {
+	fill: var(--first-accent-color);
+}
+
+.navButton:hover {
+	color: var(--second-accent-color);
+}
+
+.navButton:active {
+	color: var(--first-accent-color);
+}
+
+.glassy {
+	background: var(--glassy-background-color);
+	backdrop-filter: blur(10px);
+	padding: 2rem;
+	border-radius: 1rem;
+	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
+		inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+h1 {
+	font-family: var(--title-font);
+	font-size: 2rem;
+}
+
+h3 {
+	font-family: var(--header-font);
+	font-size: 1.5rem;
+	font-weight: 200;
+}
+
+.gradientText {
+	background: var(--main-gradient);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: var(--main-looping-gradient);
+	background-size: 400% 100%;
+	background-position: 0 0;
+	background-attachment: fixed;
+	animation: loopBg 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+section {
+	width: calc(100% - 2rem);
+	margin: 1rem;
+}
+
+section h2 {
+	border-bottom: 1px solid var(--foreground-color);
+}

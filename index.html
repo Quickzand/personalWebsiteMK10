@@ -3,7 +3,60 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Matthew Sand</title>
+		<link rel="stylesheet" href="styles/master.css" />
+		<link rel="stylesheet" href="styles/header.css" />
+		<script src="scripts/jquery.js"></script>
+		<script src="scripts/simpleParalax.js"></script>
+		<script src="scripts/backgroundController.js" async defer></script>
+		<script src="scripts/header.js" async defer></script>
+		<script src="scripts/missionStatement.js" async defer></script>
 	</head>
-	<body></body>
+	<body>
+		<nav>
+			<a href="#">
+				<svg
+					viewBox="0 0 500 500"
+					xmlns="http://www.w3.org/2000/svg"
+					id="navLogo">
+					<path
+						id="M"
+						d="M 62.801876 500 L 0.345001 437.543121 L -0 63 L 63.244904 0.345001 L 125.258751 0.345001 L 250.172516 125.258759 L 375.086273 0.345001 C 437 0 437 0 437 0 L 500 62.765533 L 500 438 C 437 500 437 500 437 500 L 375.086273 500 L 375.086273 187.715637 L 250.172516 312.629395 L 125.258751 187.715637 L 125.258751 500 Z" />
+				</svg>
+			</a>
+			<div id="navButtons">
+				<a href="#about" class="navButton">About</a>
+				<a href="#experience" class="navButton">Experience</a>
+				<a href="#skills" class="navButton">Skills</a>
+				<a href="#projects" class="navButton">Projects</a>
+				<a href="#contact" class="navButton">Contact</a>
+			</div>
+		</nav>
+		<header>
+			<img
+				src="images/handsomeMan.png"
+				alt="Handsome Man"
+				id="headerProfilePic" />
+			<div class="glassy" id="introBox">
+				<h1>Howdy, I'm <span class="gradientText"> Matthew Sand </span>🤠</h1>
+				<hr />
+				<h3>FullStack Software Engineer</h3>
+			</div>
+			<canvas id="backgroundCanvas"> </canvas>
+		</header>
+		<div id="missionStatement">
+			<div id="missionStatementPlaceholder"></div>
+		</div>
+		<section id="about">
+			<h2>About</h2>
+		</section>
+	</body>
+	<script>
+		document.write(
+			'<script src="http://' +
+				(location.host || "localhost").split(":")[0] +
+				':35729/livereload.js?snipver=1"></' +
+				"script>"
+		);
+	</script>
 </html>

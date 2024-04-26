@@ -1,0 +1,22 @@
+header {
+	height: 100vh;
+	position: relative;
+	display: flex;
+	box-shadow: inset 0 0 20px var(--main-background-color);
+	overflow: hidden;
+}
+
+#headerProfilePic {
+	height: 100vh;
+	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+#introBox {
+	display: inline-block;
+	padding: 1rem;
+	position: absolute;
+	right: min(100px, 25%);
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
