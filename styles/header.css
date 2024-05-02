@@ -17,6 +17,6 @@ header {
 	position: absolute;
 	right: min(100px, 25%);
 	top: 50%;
-	transform: translateY(-50%);
+	animation: floating 5s ease-in-out infinite;
 	text-align: center;
 }

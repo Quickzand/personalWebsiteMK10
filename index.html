@@ -6,11 +6,15 @@
 		<title>Matthew Sand</title>
 		<link rel="stylesheet" href="styles/master.css" />
 		<link rel="stylesheet" href="styles/header.css" />
+		<link rel="stylesheet" href="styles/animations.css" />
+		<link rel="stylesheet" href="styles/about.css" />
+		<link rel="stylesheet" href="styles/experience.css" />
 		<script src="scripts/jquery.js"></script>
 		<script src="scripts/simpleParalax.js"></script>
 		<script src="scripts/backgroundController.js" async defer></script>
 		<script src="scripts/header.js" async defer></script>
 		<script src="scripts/missionStatement.js" async defer></script>
+		<script src="scripts/experience.js" async defer></script>
 	</head>
 	<body>
 		<nav>
@@ -44,12 +48,24 @@
 			</div>
 			<canvas id="backgroundCanvas"> </canvas>
 		</header>
-		<div id="missionStatement">
-			<div id="missionStatementPlaceholder"></div>
+
+		<div id="content">
+			<section id="about">
+				<h2>About</h2>
+
+				<div id="missionStatement">
+					<div id="missionStatementPlaceholder"></div>
+					<div id="missionStatementDisplay">
+						<span id="missionStatementCursor"></span>
+					</div>
+				</div>
+			</section>
+
+			<section id="experience">
+				<h2>Experience</h2>
+				<div id="experiencesContainer"></div>
+			</section>
 		</div>
-		<section id="about">
-			<h2>About</h2>
-		</section>
 	</body>
 	<script>
 		document.write(

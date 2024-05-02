@@ -1,0 +1,29 @@
+#experiencesContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.experienceCard {
+	width: 20rem;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 1rem;
+	background: var(--glassy-background-color);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5),
+		inset 0 0 3px rgba(255, 255, 255, 0.25);
+	overflow: hidden;
+	position: relative;
+}
+
+.experienceCard img {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	filter: blur(5px);
+	opacity: 0.5;
+	position: absolute;
+	z-index: -1;
+	object-position: 50% 50%;
+	object-fit: cover;
+}

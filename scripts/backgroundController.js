@@ -5,15 +5,47 @@ let cellSize = 100; // Size of each cell
 var colCount = Math.ceil($(window).width() / cellSize);
 var rowCount = Math.ceil($(window).height() / cellSize);
 
+var mousePos = { x: 0, y: 0 };
+
+// Update the mouse position when it moves according to the viewport
+$(document).mousemove(function (event) {
+	mousePos.x = event.pageX;
+	mousePos.y = event.pageY - $(window).scrollTop(); // Adjust for vertical scroll
+});
+
+const mouseHoverEffectRadius = 2; // How many cells around the mouse to animate
+
 class Cell {
 	constructor(x, y) {
 		this.x = x;
 		this.y = y;
 		this.opacity = 1; // Start fully opaque
-		this.currentlyAnimating = false;
+		this.defaultOpacity = 1; // The normal, non-animated state opacity
+		this.mouseInfluenceOpacity = 0.5; // Opacity when the mouse is near
+		this.inMouseInfluence = false; // Whether the mouse is near the cell
 	}
 
 	draw() {
+		// Check if the mouse is within an interactive radius from the center of the cell
+		const centerX = this.x + cellSize / 2;
+		const centerY = this.y + cellSize / 2;
+		const distance = Math.sqrt(
+			Math.pow(mousePos.x - centerX, 2) + Math.pow(mousePos.y - centerY, 2)
+		);
+		// If within a radius of mouseHoverEffectRadius cells, change the opacity
+		if (distance < cellSize * mouseHoverEffectRadius) {
+			this.opacity = this.mouseInfluenceOpacity;
+			this.inMouseInfluence = true;
+		} else if (this.inMouseInfluence) {
+			// Fade out the cell if the mouse was near it
+			this.opacity += 0.01;
+			if (this.opacity >= this.defaultOpacity) {
+				this.opacity = this.defaultOpacity;
+				this.inMouseInfluence = false;
+			}
+		}
+
+		// Draw the cell with its current opacity
 		ctx.fillStyle = hexToRGBA(
 			$(":root").css("--main-background-color"),
 			this.opacity

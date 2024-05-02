@@ -1,0 +1,34 @@
+#missionStatement {
+	width: clamp(20rem, 60%, 200rem);
+	margin: 0 auto;
+	font-family: var(--title-font);
+	font-size: 1.2rem;
+	text-align: center;
+	padding: 1rem;
+	font-weight: bold;
+	line-height: 1.6;
+	position: relative;
+}
+
+#missionStatementPlaceholder {
+	text-align: left;
+	opacity: 0;
+}
+
+#missionStatementCursor {
+	display: inline-block;
+	line-height: 1;
+	width: 0.25em;
+	height: 1.25em;
+	margin-left: 0.25em;
+	background: var(--foreground-color);
+	animation: blink cubic-bezier(0.23, 1, 0.32, 1) 1s infinite;
+}
+
+#missionStatementDisplay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: left;
+	padding: 1rem;
+}
