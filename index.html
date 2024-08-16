@@ -9,12 +9,14 @@
 		<link rel="stylesheet" href="styles/animations.css" />
 		<link rel="stylesheet" href="styles/about.css" />
 		<link rel="stylesheet" href="styles/experience.css" />
+		<link rel="stylesheet" href="styles/projects.css" />
+		<link rel="stylesheet" href="styles/skills.css" />
 		<script src="scripts/jquery.js"></script>
-		<script src="scripts/simpleParalax.js"></script>
-		<script src="scripts/backgroundController.js" async defer></script>
-		<script src="scripts/header.js" async defer></script>
+		<script src="scripts/nav.js" async defer></script>
 		<script src="scripts/missionStatement.js" async defer></script>
 		<script src="scripts/experience.js" async defer></script>
+		<script src="scripts/projects.js" async defer></script>
+		<script src="scripts/skills.js" async defer></script>
 	</head>
 	<body>
 		<nav>
@@ -36,11 +38,78 @@
 				<a href="#contact" class="navButton">Contact</a>
 			</div>
 		</nav>
+		<div id="mobileNavToggleButton">☰</div>
+		<div id="mobileNav">
+			<a href="#about" class="mobileNavButton">About</a>
+			<a href="#experience" class="mobileNavButton">Experience</a>
+			<a href="#skills" class="mobileNavButton">Skills</a>
+			<a href="#projects" class="mobileNavButton">Projects</a>
+			<a href="#contact" class="mobileNavButton">Contact</a>
+		</div>
 		<header>
-			<img
-				src="images/handsomeMan.png"
-				alt="Handsome Man"
-				id="headerProfilePic" />
+			<svg
+				id="headerProfilePic"
+				viewBox="0 0 500 500"
+				xmlns="http://www.w3.org/2000/svg">
+				<g id="Glasses">
+					<path
+						id="Rectangle"
+						class="filled"
+						fill-rule="evenodd"
+						stroke="none"
+						d="M 233.60788 360.184448 C 233.60788 360.184448 243.842545 359.248901 249.823395 359.223297 C 256.941101 359.19281 266.03891 360.184448 266.03891 360.184448 L 297.616516 340 C 297.616516 340 275.426849 344.805847 248.969955 344.805847 C 228.487198 344.805847 198.616501 340 198.616501 340 L 233.60788 360.184448 Z" />
+					<path
+						id="Rounded-Rectangle-copy"
+						fill="none"
+						class="stroked"
+						stroke-width="9.61165"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M 229.125458 397.292572 C 229.125458 420.326965 211.912323 439 190.678864 439 L 150.558258 438.647552 C 131.978973 438.647552 107.305824 422.308624 107.305824 402.153564 L 104.422333 365.659546 C 104.422333 354.142365 113.0289 344.805847 123.64563 344.805847 L 213.995148 344.805847 C 224.611893 344.805847 233.218445 354.142365 233.218445 365.659546 Z" />
+					<path
+						id="Path"
+						class="filled"
+						fill-rule="evenodd"
+						stroke="none"
+						d="M 91.927185 351.533997 C 91.927185 354.718994 94.509155 357.300964 97.694176 357.300964 L 109.228157 355.378662 C 112.41317 355.378662 118.839806 351.83551 118.839806 348.650482 L 122.684464 346.728149 C 122.684464 343.543121 120.102493 340.961182 116.917473 340.961182 L 97.694176 340.961182 C 94.509155 340.961182 91.927185 343.543121 91.927185 346.728149 Z" />
+					<path
+						id="path1"
+						fill="none"
+						class="stroked"
+						stroke-width="9.61165"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M 272.874542 397.292572 C 272.874542 420.326965 290.087677 439 311.321136 439 L 351.441742 438.647552 C 370.021027 438.647552 394.694183 422.308624 394.694183 402.153564 L 397.577667 365.659546 C 397.577667 354.142365 388.9711 344.805847 378.35437 344.805847 L 288.004852 344.805847 C 277.388123 344.805847 268.781555 354.142365 268.781555 365.659546 Z" />
+					<path
+						id="path2"
+						class="filled"
+						fill-rule="evenodd"
+						stroke="none"
+						d="M 410.072815 351.533997 C 410.072815 354.718994 407.490845 357.300964 404.305817 357.300964 L 392.771851 355.378662 C 389.586823 355.378662 383.160187 351.83551 383.160187 348.650482 L 379.315521 346.728149 C 379.315521 343.543121 381.897491 340.961182 385.08252 340.961182 L 404.305817 340.961182 C 407.490845 340.961182 410.072815 343.543121 410.072815 346.728149 Z" />
+				</g>
+				<path
+					id="path3"
+					class="filled"
+					fill-rule="evenodd"
+					stroke="none"
+					d="M 409 313 C 405.2659 305.981262 403.999573 276.897644 383 251 C 362.000427 225.102356 379.355225 221.149139 350 219 C 311.292633 216.166168 324.914948 233.449524 302 231 C 285.272095 229.211853 246.966064 201.388123 197 206 C 177.753403 207.776459 156.961319 208.275452 137 204 C 126.565567 201.765076 129.939972 235.771606 129 240 C 128.060028 244.228394 106.294937 282.544189 95 326 C 83.705063 369.455811 96.242081 394.684631 72 395 C 43.637711 395.368958 47.118851 354.595276 43 315 C 38.881149 275.404724 40 282 40 282 C 40 282 22.734867 274.500153 34 205 C 34.563255 201.524994 26.360777 204.870758 27 202 C 34.443192 168.572632 49.560005 151.996063 71 137 C 76.631104 133.061371 88.246986 135.319183 91 132 C 128.801147 86.424835 111.82914 99.216034 141 84 C 172.032837 67.812744 203.071014 45.902863 246 29 C 271.794006 18.843872 242 49 242 49 C 242 49 313.360718 14.321075 320 15 C 325.358795 15.547974 333.791656 51.768585 337 54 C 340.208344 56.231415 345.681366 44.87149 351 45 C 356.755737 45.139069 366.31662 66.193542 366 68 C 365.68338 69.806458 382.835266 59.857849 386 66 C 389.164734 72.142151 397.979309 60.085236 414 106 C 430.020691 151.914764 410.986328 94.912872 432 124 C 453.013672 153.087128 437.656891 113.67923 471 158 C 476.995209 165.969055 469.058289 160.387146 467 163 C 463.665558 167.232849 475.927246 175.537537 466 187 C 462.340088 191.225891 453.585297 178.976501 463 199 C 475.007141 224.537201 463.164337 269.168549 457.058167 313.320435 C 451.035797 356.866516 457.025909 392.771088 440 393 C 406.079803 393.456055 412.7341 320.018738 409 313 Z" />
+				<path
+					id="rightEyebrow"
+					fill="none"
+					class="stroked"
+					stroke-width="10"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M 277 323.001831 C 277 323.001831 344.743866 311.109192 402 324" />
+				<path
+					id="leftEyebrow"
+					fill="none"
+					class="stroked"
+					stroke-width="10"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M 226 323.001831 C 226 323.001831 158.256134 311.109192 101 324" />
+			</svg>
 			<div class="glassy" id="introBox">
 				<h1>Howdy, I'm <span class="gradientText"> Matthew Sand </span>🤠</h1>
 				<hr />
@@ -52,21 +121,70 @@
 		<div id="content">
 			<section id="about">
 				<h2>About</h2>
-
-				<div id="missionStatement">
-					<div id="missionStatementPlaceholder"></div>
-					<div id="missionStatementDisplay">
-						<span id="missionStatementCursor"></span>
+				<div id="aboutHead">
+					<div id="missionStatement">
+						<div id="missionStatementPlaceholder"></div>
+						<div id="missionStatementDisplay">
+							<span id="missionStatementCursor"></span>
+						</div>
+					</div>
+					<div id="resumeContainer">
+						<h4>
+							If you want all of this info in a more concise format, take a look
+							at my resume! 👀
+						</h4>
+						<div id="resumeContainerContent">
+							<iframe src="resume.pdf"></iframe>
+							<div id="resumeButtons">
+								<a href="resume.pdf">Open</a>
+								<a href="">Download</a>
+								<a href="">Share</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
 
 			<section id="experience">
 				<h2>Experience</h2>
-				<div id="experiencesContainer"></div>
+				<div id="experienceTypes"></div>
+				<div id="experiencesContainer">
+					<div id="experiencesTimelineBar"></div>
+				</div>
+			</section>
+
+			<section id="skills">
+				<h2>Skills</h2>
+				<div id="skillsContainer">
+					<h3>Programming Languages</h3>
+					<div id="programmingLanguages" class="skillCardsContainer"></div>
+					<h3>Technologies</h3>
+					<div id="technologies" class="skillCardsContainer"></div>
+					<h3>Proficiencies</h3>
+					<div id="profs" class="skillCardsContainer"></div>
+				</div>
+			</section>
+
+			<section id="projects">
+				<h2>Projects</h2>
+				<div id="projectsTagsSelection"></div>
+				<div id="projectsContainer"></div>
 			</section>
 		</div>
+
+		<div id="projectScreen">
+			<div id="projectHeader" class="leftSideSpread">
+				<div id="projectClose">✕</div>
+				<h2 id="projectName">Gizmo</h2>
+			</div>
+
+			<div id="projectCarouselPhotosContainer" class="leftSideSpread">
+				<div id="projectCarouselPhotos"></div>
+			</div>
+			<div id="projectSections"></div>
+		</div>
 	</body>
+	<script src="scripts/backgroundController.js"></script>
 	<script>
 		document.write(
 			'<script src="http://' +

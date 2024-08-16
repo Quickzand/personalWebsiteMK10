@@ -4,7 +4,7 @@
 :root {
 	--main-background-color: #0f0f0f;
 	--glassy-background-color: rgba(15, 15, 15, 0.3);
-	--darker-glassy-background-color: rgba(15, 15, 15, 0.8);
+	--darker-glassy-background-color: rgba(15, 15, 15, 0.99);
 	--first-accent-color: #23d183;
 	--second-accent-color: #06ace8;
 	--main-gradient: linear-gradient(
@@ -23,6 +23,8 @@
 	--header-font: "Poppins", sans-serif;
 	--body-font: "Nunito", sans-serif;
 	--foreground-color: #f0f0f0;
+	--glassy-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
+		inset 0 0 2px 1px rgba(255, 255, 255, 0.25);
 }
 
 body {
@@ -38,13 +40,25 @@ body {
 	background-size: 400% 100%;
 	background-position: 0 0;
 	background-attachment: fixed;
-	animation: loopBg 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+	animation: loopBg 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite,
+		fadeIn 1s 4s forwards;
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
 	z-index: -100;
 	top: 0;
 	left: 0;
+	opacity: 0;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 nav {
@@ -70,12 +84,23 @@ nav {
 	font-family: var(--title-font);
 	font-size: 1rem;
 	color: var(--foreground-color);
+	background-color: var(--glassy-background-color);
 	text-decoration: none;
 	font-family: var(--title-font);
-	padding: 1rem;
+	padding: 0.5rem 1rem;
+	margin: 0 0.5rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
+		inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
 	cursor: pointer;
 	font-weight: bold;
-	transition: color 0.15s ease-in-out;
+	transition: all 0.15s ease-in-out;
+	transform-origin: center;
+	backdrop-filter: blur(10px);
+	--webkit-backdrop-filter: blur(10px);
+	opacity: 0;
+	animation: navButtonSlideIn 1s calc(var(--index, 0) * 0.1s) ease-in-out
+		forwards;
 }
 
 #navLogo {
@@ -95,15 +120,30 @@ nav {
 
 .navButton:hover {
 	color: var(--second-accent-color);
+	scale: 1.05;
+	filter: brightness(1.1);
 }
 
 .navButton:active {
 	color: var(--first-accent-color);
+	scale: 0.95;
+	filter: brightness(1.5);
+}
+
+@keyframes navButtonSlideIn {
+	0% {
+		transform: translateY(-200%);
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 .glassy {
-	background: var(--glassy-background-color);
+	background-color: var(--glassy-background-color);
 	backdrop-filter: blur(10px);
+	--webkit-backdrop-filter: blur(10px);
 	padding: 2rem;
 	border-radius: 1rem;
 	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
@@ -142,11 +182,113 @@ section {
 section h2 {
 	padding-top: 1rem;
 	margin-top: 0;
-	border-bottom: 1px solid var(--foreground-color);
+	display: inline-block;
+	background: var(--glassy-background-color);
+	backdrop-filter: blur(10px);
+	--webkit-backdrop-filter: blur(10px);
+	padding: 1rem;
+	border-radius: 1rem;
+	width: 10rem;
+	text-align: center;
+	font-family: var(--header-font);
+	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
+		inset 0 0 2px 1px rgba(255, 255, 255, 0.25);
 }
 
 #content {
-	background: var(--darker-glassy-background-color);
 	min-height: 100vh;
-	backdrop-filter: brightness(1.25) blur(10px);
+}
+
+#mobileNav {
+	display: none;
+}
+
+#mobileNavToggleButton {
+	display: none;
+}
+
+/* Anything below 750px  */
+@media (max-width: 750px) {
+	html {
+		font-size: 12px;
+	}
+
+	nav {
+		display: none;
+	}
+
+	#mobileNavToggleButton {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		z-index: 101;
+		line-height: 1;
+		overflow: hidden;
+		display: grid;
+		place-items: center;
+		background-color: var(--glassy-background-color);
+		backdrop-filter: blur(10px);
+		--webkit-backdrop-filter: blur(10px);
+		padding: 1rem;
+		border-radius: 1rem;
+		aspect-ratio: 1;
+		font-size: 2rem;
+		cursor: pointer;
+		box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
+			inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+	}
+
+	#mobileNav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-evenly;
+		pointer-events: none;
+		transform: scaleY(1);
+		transition: all 0.5s ease-in-out;
+		transform-origin: top;
+		opacity: 0;
+	}
+
+	#mobileNav.open {
+		opacity: 1;
+		pointer-events: all;
+		backdrop-filter: blur(50px);
+		--webkit-backdrop-filter: blur(50px);
+	}
+
+	.mobileNavButton {
+		background-color: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(10px);
+		--webkit-backdrop-filter: blur(10px);
+		padding: 1rem;
+		border-radius: 1rem;
+		box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
+			inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+		text-align: center;
+		font-size: 3rem;
+		font-weight: bold;
+		font-family: var(--title-font);
+		width: calc(90% - 2rem);
+		color: var(--foreground-color);
+
+		text-decoration: none;
+		/* Make it a mobile friendly button */
+		display: block;
+		transform: translateX(200%);
+		transition: transform 0.75s calc(0s + calc(0.1s * var(--index, 0)))
+			ease-in-out;
+	}
+
+	#mobileNav.open .mobileNavButton {
+		transform: translateX(0);
+		transition: transform 0.75s calc(0.25s + calc(0.1s * var(--index, 0)))
+			ease-in-out;
+	}
 }

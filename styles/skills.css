@@ -1,0 +1,62 @@
+.skillCard {
+	aspect-ratio: 2/3;
+	background-color: var(--glassy-background-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	width: 5rem;
+	box-shadow: var(--glassy-box-shadow);
+	animation: floatCards calc(5s * var(--random, 1))
+		calc(-0.1s * var(--index, 0) * var(--random, 1)) ease-in-out infinite;
+}
+
+@keyframes floatCards {
+	0% {
+		transform: translateY(0%);
+	}
+	50% {
+		transform: translateY(10%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+.skillCardIcon {
+	width: 5rem;
+	height: 5rem;
+	object-fit: contain;
+}
+
+.skillCardName {
+	font-size: 1rem;
+	font-weight: bold;
+	text-align: center;
+	margin: 0;
+}
+
+.skillCardsContainer {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+}
+
+#skills h3 {
+	font-size: 1rem;
+	margin: 0;
+	background-color: var(--glassy-background-color);
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--glassy-box-shadow);
+	display: inline-block;
+	margin-bottom: 1rem;
+}
+
+#skills.hidden {
+	opacity: 0;
+}

@@ -1,11 +1,21 @@
 #experiencesContainer {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	position: relative;
+}
+
+#experiencesTimelineBar {
+	position: absolute;
+	width: 2px;
+	height: 100%;
+	background: var(--foreground-color);
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
 }
 
 .experienceCard {
 	width: 20rem;
-	margin: 1rem;
 	padding: 1rem;
 	border-radius: 1rem;
 	background: var(--glassy-background-color);
@@ -13,17 +23,143 @@
 		inset 0 0 3px rgba(255, 255, 255, 0.25);
 	overflow: hidden;
 	position: relative;
+	top: 50%;
+	--floating-distance: -10px;
+	animation: floating 5s calc(var(--index) * -0.25s) ease-in-out infinite;
 }
 
-.experienceCard img {
+.experienceCardContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+
+.experienceCard h3 {
+	font-size: 1.25em;
+	font-weight: bold;
+	margin: 0.1rem 0;
+}
+
+.experienceCard p {
+	font-size: 1em;
+	margin: 0.1rem 0;
+}
+
+.experienceCardImage {
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	filter: blur(5px);
-	opacity: 0.5;
+	filter: blur(15px);
+	opacity: 0.25;
 	position: absolute;
 	z-index: -1;
 	object-position: 50% 50%;
 	object-fit: cover;
+}
+
+.experienceCardContainer {
+	width: calc(50% - var(--gap-size) / 2);
+	display: flex;
+	flex-direction: row;
+}
+
+.experienceRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	--gap-size: 100px;
+	gap: var(--gap-size);
+	margin-bottom: 5rem;
+	/* padding-bottom: 100px; */
+	/* overflow: hidden; */
+}
+
+.experienceRow:nth-child(odd) {
+	flex-direction: row-reverse;
+}
+
+.experienceRow:nth-child(odd) .experienceDate {
+	text-align: left;
+}
+
+.experienceRow:nth-child(odd) .experienceCardContainer {
+	justify-content: end;
+}
+
+.experienceDate {
+	font-size: 1.25rem;
+	font-weight: bold;
+	text-align: right;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: calc(50% - var(--gap-size) / 2);
+}
+
+.experienceCardTags {
+	display: none;
+	flex-direction: row;
+	justify-content: start;
+	gap: 5px;
+	margin-top: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.experienceCardTag {
+	background: var(--first-accent-color);
+	color: var(--main-background-color);
+	padding: 0.5em;
+	font-size: 0.5em;
+	border-radius: 0.5em;
+	margin: 0;
+}
+
+.experienceCardType {
+	font-family: var(--title-font);
+	text-align: right;
+	font-weight: 200;
+	margin-top: 0.5rem;
+	font-style: italic;
+}
+
+
+#experienceTypes {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.experienceType {
+	background-color: var(--glassy-background-color);
+		box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
+		inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	cursor:pointer;
+	transition: all 0.15s ease-in-out;
+}
+
+.experienceType.selected {
+	background-color: var(--first-accent-color);
+	color: var(--main-background-color);
+}
+
+.experienceType:hover {
+	scale: 1.025;
+	filter: brightness(1.2);
+}
+
+.experienceType:active {
+	filter: brightness(1.8);
+	scale: 0.975;
+}
+
+
+@media screen and (max-width: 800px) {
+	.experienceRow {
+		--gap-size: 20px;
+	}
+	
 }

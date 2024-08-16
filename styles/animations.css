@@ -12,7 +12,7 @@
 		transform: translateY(-50%);
 	}
 	50% {
-		transform: translateY(-60%);
+		transform: translateY(calc(-50% - var(--floating-distance)));
 	}
 	100% {
 		transform: translateY(-50%);

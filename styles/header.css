@@ -2,14 +2,10 @@ header {
 	height: 100vh;
 	position: relative;
 	display: flex;
-	box-shadow: inset 0 0 20px var(--main-background-color);
 	overflow: hidden;
+	--peak-in-head-duration: 5s;
 }
 
-#headerProfilePic {
-	height: 100vh;
-	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
-}
 
 #introBox {
 	display: inline-block;
@@ -17,6 +13,140 @@ header {
 	position: absolute;
 	right: min(100px, 25%);
 	top: 50%;
-	animation: floating 5s ease-in-out infinite;
+	animation:slideInFromBottom 2s var(--peak-in-head-duration) ease-in-out forwards ,floating 5s calc(var(--peak-in-head-duration) + 2s) ease-in-out infinite;
 	text-align: center;
+	transform: translateY(100vh);
+}
+
+@keyframes slideInFromBottom {
+	0% {
+		transform: translateY(100vh);
+	}
+
+	100% {
+		transform: translateY(-50%);
+	}
+
+}
+
+#headerProfilePic {
+	--fill-color: var(--foreground-color);
+	transition: all 0.5s;
+	height: 75vh;
+	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+	aspect-ratio: 1;	
+	position: absolute;
+	top: 50%;
+	transform-origin: center;
+	transform: translateY(-50%);
+	animation: peakHeadIn var(--peak-in-head-duration) ease;
+}
+
+
+#rightEyebrow {
+	animation: bounceEyebrow 0.75s var(--peak-in-head-duration) ease;
+}
+
+
+
+@keyframes peakHeadIn {
+	0% {
+		transform: translate(-100vw, -50%) rotate(5deg);
+	}
+
+	50% {
+		transform: translate(-50%, -50%) rotate(5deg);
+	}
+
+}
+
+@keyframes bounceEyebrow {
+	0% {
+		transform: translateY(0);
+	}
+
+	25% {
+		transform: translateY(-0.5rem);
+	}
+
+	50% {
+		transform: translateY(0);
+	}
+
+	75% {
+		transform: translateY(-0.5rem);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+#headerProfilePic:active {
+	--fill-color: var(--first-accent-color);
+	scale: 1.05;
+	filter: drop-shadow(0 0 30px var(--second-accent-color));
+}
+
+
+#headerProfilePic .filled {
+	fill: var(--fill-color);
+	transition: all 0.5s;
+}
+
+#headerProfilePic .stroked {
+	transition: all 0.5s;
+	stroke: var(--fill-color);
+}
+
+
+#headerProfilePic:hover #rightEyebrow {
+	transform: translateY(-0.5rem);
+}
+
+#headerProfilePic:active #rightEyebrow, #headerProfilePic:active #leftEyebrow {
+	transform: translateY(-1rem);
+}
+
+
+/* Anything below 750px  */
+@media (max-width: 750px) {
+	header {
+		height: 100vh;
+		position: relative;
+		display: flex;
+		overflow: hidden;
+	}
+
+	#headerProfilePic {
+		width: calc(100% - 2rem);
+		height: auto;
+		filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+		top:50%;
+		left:50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#introBox {
+		display: inline-block;
+		padding: 1rem;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: calc(100% - 4rem);
+		transform: translate(-50%, -70%);
+		text-align: center;
+		animation: none;
+	}
+
+@keyframes slideInFromBottom {
+	0% {
+		transform: translate(-50%, 100vh);
+	}
+
+	100% {
+		transform: translate(-50%,-70%);
+	}
+
+}
 }

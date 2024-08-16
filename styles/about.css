@@ -2,17 +2,23 @@
 	width: clamp(20rem, 60%, 200rem);
 	margin: 0 auto;
 	font-family: var(--title-font);
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	text-align: center;
 	padding: 1rem;
 	font-weight: bold;
 	line-height: 1.6;
 	position: relative;
+	background-color: var(--glassy-background-color);
+	box-shadow: var(--glassy-box-shadow);
+	border-radius: 1rem;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 }
 
 #missionStatementPlaceholder {
 	text-align: left;
 	opacity: 0;
+	pointer-events: none;
 }
 
 #missionStatementCursor {
@@ -27,8 +33,81 @@
 
 #missionStatementDisplay {
 	position: absolute;
-	top: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	left: 0;
 	text-align: left;
 	padding: 1rem;
+}
+
+#aboutHead {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+#resumeContainer {
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: var(--glassy-background-color);
+	box-shadow: var(--glassy-box-shadow);
+	height: 100%;
+}
+
+#resumeContainer iframe {
+	aspect-ratio: 8.5/11;
+}
+
+#resumeButtons {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: space-evenly;
+}
+
+#resumeButtons > a {
+	background-color: var(--glassy-background-color);
+	box-shadow: var(--glassy-box-shadow);
+	padding: 0.5rem 1rem;
+	color: var(--foreground-color);
+	text-decoration: none;
+	font-size: 1.5rem;
+	transition: 0.15s ease-in;
+	border-radius: 1rem;
+}
+
+#resumeButtons > a:hover {
+	scale: 1.1;
+	filter: brightness(1.1);
+}
+
+#resumeButtons > a:active {
+	filter: brightness(1.5);
+	scale: 0.9;
+}
+
+#resumeContainerContent {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	height: 100%;
+}
+
+@media (max-width: 750px) {
+	#aboutHead {
+		flex-direction: column;
+		position: relative;
+	}
+
+	#resumeButtons {
+		flex-direction: row;
+		margin-top: 20px;
+		gap: 20px;
+	}
+
+	#missionStatement {
+		width: calc(100% - 2rem);
+		padding: 1rem;
+	}
 }
