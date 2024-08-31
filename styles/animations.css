@@ -1,9 +1,9 @@
 @keyframes loopBg {
 	0% {
-		background-position: 0 50%;
+		background-position: 200% 0%;
 	}
 	100% {
-		background-position: 100% 50%;
+		background-position: 00% 0%;
 	}
 }
 
@@ -29,4 +29,19 @@
 	100% {
 		opacity: 0;
 	}
+}
+
+.inFromLeft:not(.appear) {
+	transform: translateX(-100vw);
+	opacity: 0;
+}
+
+.inFromLeft,
+.inFromRight {
+	transition: transform 0.75s 0.25s ease-out, opacity 0.75s 0.25s ease-out;
+}
+
+.inFromRight:not(.appear) {
+	transform: translateX(100vw);
+	opacity: 0;
 }

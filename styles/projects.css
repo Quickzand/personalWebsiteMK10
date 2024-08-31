@@ -20,8 +20,7 @@
 	padding: 1rem;
 	border-radius: 1rem;
 	max-width: 40rem;
-	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
-		inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+	box-shadow: var(--glassy-box-shadow);
 	cursor: pointer;
 	transition: transform 1s ease, filter 0.25s ease-in-out,
 		scale 0.25s ease-in-out;
@@ -66,7 +65,7 @@
 	font-family: var(--header-font);
 	font-size: 1rem;
 	margin: 0;
-	height: 2rem;
+	height: 2lh;
 }
 
 .projectPreviewTagsContainer {
@@ -136,8 +135,7 @@
 	--webkit-backdrop-filter: blur(10px);
 	padding: 1rem;
 	border-radius: 1rem;
-	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
-		inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+	box-shadow: var(--glassy-box-shadow);
 	height: 2rem;
 	min-width: 2rem;
 	display: grid;
@@ -182,8 +180,7 @@
 	font-size: 0.75rem;
 	line-height: 1;
 	margin-top: 0.5rem;
-	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
-		inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+	box-shadow: var(--glassy-box-shadow);
 	cursor: pointer;
 	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out,
 		scale 0.15s ease-in-out, filter 0.15s ease-in-out;
@@ -278,5 +275,13 @@
 
 	#projectCarouselPhotos > img {
 		height: 150px;
+	}
+
+	#projectHeader {
+		margin-top: 0px;
+	}
+
+	#projectCarouselPhotos {
+		margin-top: 75px;
 	}
 }

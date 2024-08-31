@@ -95,7 +95,6 @@ var experienceTypes = [];
 
 var selectedExperienceTypes = [];
 
-
 // Creates a card for each experience in the experienceData array and appends it to #experiencesContainer
 function generateExperienceCard(cardData) {
 	const card = $("<div>").addClass("experienceCard");
@@ -109,7 +108,6 @@ function generateExperienceCard(cardData) {
 	const cardDescription = $("<p>")
 		.text(cardData.description)
 		.addClass("experienceCardDescription");
-	
 
 	cardContent.append(cardTitle);
 
@@ -123,7 +121,7 @@ function generateExperienceCard(cardData) {
 			const tagElement = $("<span>").text(tag).addClass("experienceCardTag");
 			cardTags.append(tagElement);
 		});
-	cardContent.append(cardTags);
+		cardContent.append(cardTags);
 	}
 
 	var cardType = $("<div>").addClass("experienceCardType");
@@ -134,17 +132,19 @@ function generateExperienceCard(cardData) {
 	// If the experience type is not already in the experienceTypes array, add it
 	if (!experienceTypes.includes(cardData.type)) {
 		experienceTypes.push(cardData.type);
-	}	
+	}
 
 	return card;
 }
 
 function formatExperienceTypeText(type) {
-	return type.toLowerCase().replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+	return type
+		.toLowerCase()
+		.replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
 }
 
 function generateExperienceRow(experienceData) {
-	const row = $("<div>").addClass("experienceRow");
+	const row = $("<div>").addClass("experienceRow").addClass("shown");
 	// add the date range to the row
 	const date = $("<div>").addClass("experienceDate");
 	date.text(experienceData.timeline);
@@ -165,14 +165,23 @@ function experienceFilter() {
 	const $experienceCards = $(".experienceCard");
 	$experienceCards.each(function () {
 		const $experienceCard = $(this);
-		const experienceType = $experienceCard.find(".experienceCardType").text().toLowerCase();
-		const match = selectedExperienceTypes.includes(experienceType) || selectedExperienceTypes.length === 0;
+		const experienceType = $experienceCard
+			.find(".experienceCardType")
+			.text()
+			.toLowerCase();
+		const match =
+			selectedExperienceTypes.includes(experienceType) ||
+			selectedExperienceTypes.length === 0;
 		if (match) {
 			$experienceCard.parent().parent().fadeIn(300);
+			$experienceCard.parent().parent().addClass("shown");
 		} else {
 			$experienceCard.parent().parent().fadeOut(300);
+			$experienceCard.parent().parent().removeClass("shown");
 		}
 	});
+
+	updateRowPositions();
 }
 
 function toggleExperienceType(type) {
@@ -180,7 +189,9 @@ function toggleExperienceType(type) {
 		selectedExperienceTypes.splice(selectedExperienceTypes.indexOf(type), 1);
 		$("." + type).removeClass("selected");
 	} else {
+		selectedExperienceTypes = [];
 		selectedExperienceTypes.push(type);
+		$(".experienceType.selected").removeClass("selected");
 		$("." + type).addClass("selected");
 	}
 	experienceFilter();
@@ -204,7 +215,7 @@ function generateExperienceTypeFilters() {
 			.click(() => toggleExperienceType(type));
 		experienceTypesContainer.append(typeElement);
 	});
-};
+}
 
 const $experiencesContainer = $("#experiencesContainer");
 experienceData.forEach((experience) => {
@@ -213,4 +224,16 @@ experienceData.forEach((experience) => {
 	row.css("--index", experienceData.indexOf(experience));
 	$experiencesContainer.append(row);
 	generateExperienceTypeFilters();
+	updateRowPositions();
 });
+
+function updateRowPositions() {
+	$(".experienceRow.shown").each(function (index) {
+		if (index % 2 === 0) {
+			// Checks if the index is even, which is odd in 0-based index (0, 2, 4...)
+			$(this).addClass("odd-shown");
+		} else {
+			$(this).removeClass("odd-shown");
+		}
+	});
+}

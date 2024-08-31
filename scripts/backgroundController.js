@@ -161,3 +161,9 @@ $(window).on("resize", () => {
 	cells = [];
 	cells = createCells(); // Recreate cells with new dimensions
 });
+
+// When the window loads, if the user has scrolled above the top, skip the intro
+if ($(window).scrollTop() > 20) {
+	console.log("Skipping intro...");
+	$("body").addClass("skipIntro");
+}

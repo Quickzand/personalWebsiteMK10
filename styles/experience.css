@@ -75,15 +75,15 @@
 	/* overflow: hidden; */
 }
 
-.experienceRow:nth-child(odd) {
+.experienceRow.odd-shown {
 	flex-direction: row-reverse;
 }
 
-.experienceRow:nth-child(odd) .experienceDate {
+.experienceRow.odd-shown .experienceDate {
 	text-align: left;
 }
 
-.experienceRow:nth-child(odd) .experienceCardContainer {
+.experienceRow.odd-shown .experienceCardContainer {
 	justify-content: end;
 }
 
@@ -123,7 +123,6 @@
 	font-style: italic;
 }
 
-
 #experienceTypes {
 	display: flex;
 	flex-direction: row;
@@ -133,11 +132,10 @@
 
 .experienceType {
 	background-color: var(--glassy-background-color);
-		box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
-		inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+	box-shadow: var(--glassy-box-shadow);
 	border-radius: 0.5rem;
 	padding: 0.5rem;
-	cursor:pointer;
+	cursor: pointer;
 	transition: all 0.15s ease-in-out;
 }
 
@@ -156,10 +154,8 @@
 	scale: 0.975;
 }
 
-
 @media screen and (max-width: 800px) {
 	.experienceRow {
 		--gap-size: 20px;
 	}
-	
 }

@@ -1,4 +1,143 @@
 {
+	"gizmo": {
+		"name": "Gizmo",
+		"time": "December 2023",
+		"preview": "images/projects/gizmoPreview.png",
+		"tags": [
+			{
+				"name": "SwiftUI"
+			},
+			{
+				"name": "Electron"
+			},
+			{
+				"name": "Node"
+			},
+			{
+				"name": "Websockets"
+			}
+		],
+		"links": [
+			{
+				"type": "github",
+				"href": "https://github.com/Quickzand/Shellhacks2023",
+				"name": "Github Repo"
+			},
+			{
+				"type": "collaborator",
+				"href": "https://github.com/maximusmith529",
+				"collaboratorName": "Maximus Smith"
+			},
+			{
+				"type": "collaborator",
+				"href": "https://www.sethlenhof.com",
+				"collaboratorName": "Seth Lenhof"
+			},
+			{
+				"type": "collaborator",
+				"href": "https://alexharris.design",
+				"collaboratorName": "Alex Harris"
+			},
+			{
+				"type": "devpost",
+				"href": "https://devpost.com/software/storyforge"
+			}
+		],
+		"sections": [
+			{
+				"title": "Description",
+				"content": "Gizmo is an original app that allows users to build custom widgets to control their computer from their phone."
+			},
+			{
+				"title": "How we built it",
+				"content": "We built our project by creating a web app that enables the user to set up their character and make decisions. From there we connected all decisions to the ChatGPT-4 API and requested it to generate JSON file responses that contain different states and decisions."
+			},
+			{
+				"title": "Inspiration",
+				"content": "The inspiration for our project came from playing Dungeons and Dragons, a game that we all find incredibly fun, but doesn't have any way to play by yourself. So we sought to make that."
+			},
+			{
+				"title": "Challenges",
+				"content": "A challenge we ran into was implementing the ChatGPT API in a way that would return consistently formatted JSON files that we would be able to handle, as well as making our API calls contain all necessary information to get our desired effect."
+			},
+			{
+				"title": "What we're proud of",
+				"content": "We are proud of our ability to use Git properly to allow for collaboration on the website and good version control of our code. Setting up the chatGPT-4 API was also something we are proud of because there was so much conflicting information on how to implement it."
+			}
+		],
+		"images": [
+			"images/projects/gizmo/gizmo1.gif",
+			"images/projects/gizmo/gizmo2.png",
+			"images/projects/gizmo/gizmo3.png"
+		]
+	},
+	"poosdker": {
+		"name": "POOSDKer",
+		"time": "May 2024",
+		"preview": "images/projects/poosdkerPreview.png",
+		"tags": [
+			{
+				"name": "SwiftUI",
+				"highlighted": "true"
+			},
+			{
+				"name": "Figma",
+				"icon": "images/tags/html.svg"
+			}
+		],
+		"links": [
+			{
+				"type": "github",
+				"href": "https://github.com/Quickzand/Shellhacks2023",
+				"name": "Github Repo"
+			},
+			{
+				"type": "collaborator",
+				"href": "https://github.com/maximusmith529",
+				"collaboratorName": "Maximus Smith"
+			},
+			{
+				"type": "collaborator",
+				"href": "https://www.sethlenhof.com",
+				"collaboratorName": "Seth Lenhof"
+			},
+			{
+				"type": "collaborator",
+				"href": "https://alexharris.design",
+				"collaboratorName": "Alex Harris"
+			},
+			{
+				"type": "devpost",
+				"href": "https://devpost.com/software/storyforge"
+			}
+		],
+		"sections": [
+			{
+				"title": "Description",
+				"content": "POOSDker is a semester-long project I worked on with my classmates. We built an game in SwiftUI utilizing custom networking infrastructure to allow for local multiplayer poker."
+			},
+			{
+				"title": "How we built it",
+				"content": "We built our project by creating a web app that enables the user to set up their character and make decisions. From there we connected all decisions to the ChatGPT-4 API and requested it to generate JSON file responses that contain different states and decisions."
+			},
+			{
+				"title": "Inspiration",
+				"content": "The inspiration for our project came from playing Dungeons and Dragons, a game that we all find incredibly fun, but doesn't have any way to play by yourself. So we sought to make that."
+			},
+			{
+				"title": "Challenges",
+				"content": "A challenge we ran into was implementing the ChatGPT API in a way that would return consistently formatted JSON files that we would be able to handle, as well as making our API calls contain all necessary information to get our desired effect."
+			},
+			{
+				"title": "What we're proud of",
+				"content": "We are proud of our ability to use Git properly to allow for collaboration on the website and good version control of our code. Setting up the chatGPT-4 API was also something we are proud of because there was so much conflicting information on how to implement it."
+			}
+		],
+		"images": [
+			"images/projects/gizmo/gizmo1.png",
+			"images/projects/gizmo/gizmo2.png"
+		]
+	},
 	"storyForge": {
 		"name": "StoryForge",
 		"time": "September 2023",

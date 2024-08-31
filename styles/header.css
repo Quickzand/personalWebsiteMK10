@@ -6,16 +6,23 @@ header {
 	--peak-in-head-duration: 5s;
 }
 
-
 #introBox {
 	display: inline-block;
 	padding: 1rem;
 	position: absolute;
 	right: min(100px, 25%);
 	top: 50%;
-	animation:slideInFromBottom 2s var(--peak-in-head-duration) ease-in-out forwards ,floating 5s calc(var(--peak-in-head-duration) + 2s) ease-in-out infinite;
+	--floating-duration: 5s;
+	animation: slideInFromBottom 2s var(--peak-in-head-duration) ease-in-out
+			forwards,
+		floating var(--floating-duration) calc(var(--peak-in-head-duration) + 2s)
+			ease-in-out infinite;
 	text-align: center;
 	transform: translateY(100vh);
+}
+
+#introBox:hover {
+	animation-play-state: paused;
 }
 
 @keyframes slideInFromBottom {
@@ -26,7 +33,6 @@ header {
 	100% {
 		transform: translateY(-50%);
 	}
-
 }
 
 #headerProfilePic {
@@ -34,7 +40,7 @@ header {
 	transition: all 0.5s;
 	height: 75vh;
 	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
-	aspect-ratio: 1;	
+	aspect-ratio: 1;
 	position: absolute;
 	top: 50%;
 	transform-origin: center;
@@ -42,12 +48,9 @@ header {
 	animation: peakHeadIn var(--peak-in-head-duration) ease;
 }
 
-
 #rightEyebrow {
 	animation: bounceEyebrow 0.75s var(--peak-in-head-duration) ease;
 }
-
-
 
 @keyframes peakHeadIn {
 	0% {
@@ -57,7 +60,6 @@ header {
 	50% {
 		transform: translate(-50%, -50%) rotate(5deg);
 	}
-
 }
 
 @keyframes bounceEyebrow {
@@ -88,7 +90,6 @@ header {
 	filter: drop-shadow(0 0 30px var(--second-accent-color));
 }
 
-
 #headerProfilePic .filled {
 	fill: var(--fill-color);
 	transition: all 0.5s;
@@ -99,15 +100,33 @@ header {
 	stroke: var(--fill-color);
 }
 
-
 #headerProfilePic:hover #rightEyebrow {
 	transform: translateY(-0.5rem);
 }
 
-#headerProfilePic:active #rightEyebrow, #headerProfilePic:active #leftEyebrow {
+#headerProfilePic:active #rightEyebrow,
+#headerProfilePic:active #leftEyebrow {
 	transform: translateY(-1rem);
 }
 
+#socials {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.socialButton {
+	cursor: pointer;
+	fill: var(--foreground-color);
+	width: 1.5rem;
+	aspect-ratio: 1;
+	transition: all 0.25s ease-in-out;
+}
+
+.socialButton:hover {
+	fill: var(--accentColor);
+}
 
 /* Anything below 750px  */
 @media (max-width: 750px) {
@@ -122,8 +141,8 @@ header {
 		width: calc(100% - 2rem);
 		height: auto;
 		filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
-		top:50%;
-		left:50%;
+		top: 50%;
+		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 
@@ -139,14 +158,13 @@ header {
 		animation: none;
 	}
 
-@keyframes slideInFromBottom {
-	0% {
-		transform: translate(-50%, 100vh);
-	}
+	@keyframes slideInFromBottom {
+		0% {
+			transform: translate(-50%, 100vh);
+		}
 
-	100% {
-		transform: translate(-50%,-70%);
+		100% {
+			transform: translate(-50%, -70%);
+		}
 	}
-
-}
 }

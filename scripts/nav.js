@@ -21,16 +21,16 @@ $(".navButton").click(function () {
 $(".mobileNavButton").click(function () {
 	var section = $(this).attr("href");
 	$("#mobileNav").removeClass("open");
+	$("#mobileNavToggleButton").removeClass("open");
 	scrollTo(section);
 });
 
 $("#mobileNavToggleButton").click(function () {
 	$("#mobileNav").toggleClass("open");
-	console.log("HERE");
+	$("#mobileNavToggleButton").toggleClass("open");
 });
 
-
-// Give each nav button an index so we can animate them in order, but have it be backwards 
+// Give each nav button an index so we can animate them in order, but have it be backwards
 
 $(".navButton").each(function (index) {
 	$(this).css("--index", $(".navButton").length - index);
@@ -39,5 +39,3 @@ $(".navButton").each(function (index) {
 $(".mobileNavButton").each(function (index) {
 	$(this).css("--index", index);
 });
-
-

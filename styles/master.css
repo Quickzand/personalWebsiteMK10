@@ -7,6 +7,7 @@
 	--darker-glassy-background-color: rgba(15, 15, 15, 0.99);
 	--first-accent-color: #23d183;
 	--second-accent-color: #06ace8;
+	--error-color: #933;
 	--main-gradient: linear-gradient(
 		90deg,
 		var(--first-accent-color) 0%,
@@ -15,16 +16,15 @@
 	--main-looping-gradient: linear-gradient(
 		90deg,
 		var(--first-accent-color) 0%,
-		var(--second-accent-color) 37.5%,
-		var(--first-accent-color) 62.5%,
-		var(--second-accent-color) 100%
+		var(--second-accent-color) 50%,
+		var(--first-accent-color) 100%
 	);
 	--title-font: "Share Tech Mono ", monospace;
 	--header-font: "Poppins", sans-serif;
 	--body-font: "Nunito", sans-serif;
 	--foreground-color: #f0f0f0;
-	--glassy-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
-		inset 0 0 2px 1px rgba(255, 255, 255, 0.25);
+	--glassy-box-shadow: 0 0 20px 10px rgba(30, 30, 30, 0.25),
+		inset 0 0 2px 2px rgba(255, 255, 255, 0.05);
 }
 
 body {
@@ -32,12 +32,14 @@ body {
 	background-color: var(--main-background-color);
 	color: var(--foreground-color);
 	font-family: var(--body-font);
+	padding-bottom: 25vh;
+	overflow-x: hidden;
 }
 
 #backgroundCanvas {
-	filter: blur(100px);
+	filter: blur(100px) brightness(1.85);
 	background-image: var(--main-looping-gradient);
-	background-size: 400% 100%;
+	background-size: 200% 100%;
 	background-position: 0 0;
 	background-attachment: fixed;
 	animation: loopBg 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite,
@@ -49,6 +51,10 @@ body {
 	top: 0;
 	left: 0;
 	opacity: 0;
+}
+
+body.skipIntro #backgroundCanvas {
+	opacity: 1;
 }
 
 @keyframes fadeIn {
@@ -90,8 +96,7 @@ nav {
 	padding: 0.5rem 1rem;
 	margin: 0 0.5rem;
 	border-radius: 0.5rem;
-	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
-		inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+	box-shadow: var(--glassy-box-shadow);
 	cursor: pointer;
 	font-weight: bold;
 	transition: all 0.15s ease-in-out;
@@ -146,8 +151,7 @@ nav {
 	--webkit-backdrop-filter: blur(10px);
 	padding: 2rem;
 	border-radius: 1rem;
-	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
-		inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+	box-shadow: var(--glassy-box-shadow);
 }
 
 h1 {
@@ -167,16 +171,19 @@ h3 {
 	-webkit-background-clip: text;
 	color: transparent;
 	background-image: var(--main-looping-gradient);
-	background-size: 400% 100%;
+	background-size: 200% 100%;
 	background-position: 0 0;
 	background-attachment: fixed;
-	animation: loopBg 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+	animation: loopBg 5s linear infinite;
 }
 
 section {
 	width: calc(100% - 2rem);
 	margin: 1rem;
 	margin-top: 0;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	overflow: hidden;
 }
 
 section h2 {
@@ -191,8 +198,7 @@ section h2 {
 	width: 10rem;
 	text-align: center;
 	font-family: var(--header-font);
-	box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
-		inset 0 0 2px 1px rgba(255, 255, 255, 0.25);
+	box-shadow: var(--glassy-box-shadow);
 }
 
 #content {
@@ -205,6 +211,74 @@ section h2 {
 
 #mobileNavToggleButton {
 	display: none;
+}
+
+#colorPalettes {
+	position: fixed;
+	bottom: 0.5rem;
+	left: 1rem;
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	z-index: 100;
+}
+
+#palettesIcon {
+	width: 2.5rem;
+	aspect-ratio: 1;
+	fill: var(--foreground-color);
+	cursor: pointer;
+}
+
+#colorPalettes:not(.open) #palettesIcon {
+	fill: none;
+	stroke: var(--foreground-color);
+	stroke-width: 1rem;
+}
+
+#colorPalettesList {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	gap: 1rem;
+}
+
+.colorPalette {
+	background-image: linear-gradient(
+		135deg,
+		var(--preview-color-1),
+		var(--preview-color-2)
+	);
+	border-radius: 0.5rem;
+	width: 4rem;
+	height: 4rem;
+	position: relative;
+	cursor: pointer;
+	transition: transform 0.25s calc(0.1s * var(--index)) ease-in-out,
+		opacity 0.25s calc(0.1s * var(--index)) ease-in-out, box-shadow 0.25s ease;
+}
+
+.colorPalette::after {
+	content: attr(data-palette-name);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	font-family: var(--title-font);
+	text-align: center;
+	font-size: 0.85rem;
+	width: 100%;
+}
+
+.colorPalette.active {
+	box-shadow: 0px 0px 25px 5px var(--first-accent-color);
+}
+
+#colorPalettes:not(.open) .colorPalette {
+	transform: translateX(-100vw);
+	opacity: 0;
+	pointer-events: none;
 }
 
 /* Anything below 750px  */
@@ -232,10 +306,31 @@ section h2 {
 		padding: 1rem;
 		border-radius: 1rem;
 		aspect-ratio: 1;
-		font-size: 2rem;
 		cursor: pointer;
 		box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.25),
 			inset 0 0 1px 1px rgba(255, 255, 255, 0.25);
+		width: 3rem;
+		height: 3rem;
+	}
+
+	#mobileNavToggleButton svg {
+		width: 1.5rem;
+		height: 1.5rem;
+		stroke: var(--foreground-color);
+	}
+
+	#mobileNavToggleButton svg line {
+		transition: transform 0.25s ease-in-out;
+	}
+
+	/* Turns the x into two lines */
+	#mobileNavToggleButton:not(.open) svg line:nth-child(1) {
+		transform: translateY(0.5rem) rotate(-45deg) translateX(-25%);
+	}
+
+	#mobileNavToggleButton:not(.open) svg line:nth-child(2) {
+		transform-origin: top;
+		transform: translateY(0.5rem) rotate(45deg) translateX(50%);
 	}
 
 	#mobileNav {

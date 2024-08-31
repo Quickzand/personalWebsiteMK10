@@ -11,12 +11,18 @@
 		<link rel="stylesheet" href="styles/experience.css" />
 		<link rel="stylesheet" href="styles/projects.css" />
 		<link rel="stylesheet" href="styles/skills.css" />
+		<link rel="stylesheet" href="styles/contact.css" />
 		<script src="scripts/jquery.js"></script>
+		<script src="scripts/jquery.cookie.js"></script>
 		<script src="scripts/nav.js" async defer></script>
 		<script src="scripts/missionStatement.js" async defer></script>
 		<script src="scripts/experience.js" async defer></script>
 		<script src="scripts/projects.js" async defer></script>
 		<script src="scripts/skills.js" async defer></script>
+		<script src="scripts/socials.js" async defer></script>
+		<script src="scripts/colorPalettes.js" async defer></script>
+		<script src="scripts/contact.js" async defer></script>
+		<script src="scripts/animateOnScroll.js" async defer></script>
 	</head>
 	<body>
 		<nav>
@@ -38,7 +44,32 @@
 				<a href="#contact" class="navButton">Contact</a>
 			</div>
 		</nav>
-		<div id="mobileNavToggleButton">☰</div>
+		<div id="colorPalettes">
+			<svg
+				onclick="toggleColorPalettes()"
+				id="palettesIcon"
+				viewBox="0 0 800 800"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink">
+				<path
+					id="pallete"
+					fill-rule="evenodd"
+					d="M 333.333344 100 C 370.15332 100 400 129.847656 400 166.666687 L 400 633.333313 C 400 670.153381 370.15332 700 333.333344 700 L 166.666672 700 C 129.847672 700 100 670.153381 100 633.333313 L 100 166.666687 C 100 129.847656 129.847672 100 166.666672 100 L 333.333344 100 Z M 655.31665 403.710022 C 679.710388 412.225616 697.638306 434.516663 699.783997 461.261139 L 700 633.333313 C 700 668.479675 672.805054 697.272217 638.308838 699.817139 L 633.333313 700 L 433.333344 700 L 433.333344 625.693359 L 655.31665 403.710022 Z M 250 500 C 222.385666 500 200 522.386719 200 550 C 200 577.613342 222.385666 600 250 600 C 277.614349 600 300 577.613342 300 550 C 300 522.386719 277.614349 500 250 500 Z M 454.526672 133.334351 C 479.189819 108.669617 518.374634 107.37146 544.566406 129.43988 L 548.806641 133.334351 L 666.656677 251.185364 C 690.176453 274.704224 692.449463 311.423431 673.475586 337.494598 L 433.333344 578.553345 L 433.333344 154.526672 L 454.526672 133.334351 Z" />
+			</svg>
+			<div id="colorPalettesList"></div>
+		</div>
+		<div id="mobileNavToggleButton">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 50 50"
+				overflow="visible"
+				stroke="black"
+				stroke-width="10"
+				stroke-linecap="round">
+				<line x1="0" y1="0" x2="50" y2="50" />
+				<line x1="50" y1="0" x2="0" y2="50" />
+			</svg>
+		</div>
 		<div id="mobileNav">
 			<a href="#about" class="mobileNavButton">About</a>
 			<a href="#experience" class="mobileNavButton">Experience</a>
@@ -114,6 +145,7 @@
 				<h1>Howdy, I'm <span class="gradientText"> Matthew Sand </span>🤠</h1>
 				<hr />
 				<h3>FullStack Software Engineer</h3>
+				<div id="socials"></div>
 			</div>
 			<canvas id="backgroundCanvas"> </canvas>
 		</header>
@@ -122,13 +154,13 @@
 			<section id="about">
 				<h2>About</h2>
 				<div id="aboutHead">
-					<div id="missionStatement">
+					<div id="missionStatement" class="inFromLeft">
 						<div id="missionStatementPlaceholder"></div>
 						<div id="missionStatementDisplay">
 							<span id="missionStatementCursor"></span>
 						</div>
 					</div>
-					<div id="resumeContainer">
+					<div id="resumeContainer" class="inFromRight">
 						<h4>
 							If you want all of this info in a more concise format, take a look
 							at my resume! 👀
@@ -144,7 +176,6 @@
 					</div>
 				</div>
 			</section>
-
 			<section id="experience">
 				<h2>Experience</h2>
 				<div id="experienceTypes"></div>
@@ -170,8 +201,31 @@
 				<div id="projectsTagsSelection"></div>
 				<div id="projectsContainer"></div>
 			</section>
-		</div>
 
+			<section id="contact">
+				<h2>Contact</h2>
+				<form onsubmit="event.preventDefault(); attemptSubmission();">
+					<div class="inFromLeft">
+						<input type="text" name="name" id="name" placeholder="" />
+						<label for="name">Name</label>
+					</div>
+					<div class="inFromLeft">
+						<input type="text" name="email" id="email" placeholder="" />
+						<label for="email">Email</label>
+					</div>
+					<div class="inFromRight">
+						<label for="message"></label>
+						<textarea
+							name="message"
+							placeholder="Your message..."
+							id="message"></textarea>
+					</div>
+					<div id="contactSubmit">
+						<button type="submit">Send</button>
+					</div>
+				</form>
+			</section>
+		</div>
 		<div id="projectScreen">
 			<div id="projectHeader" class="leftSideSpread">
 				<div id="projectClose">✕</div>
