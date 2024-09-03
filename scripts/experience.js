@@ -237,3 +237,70 @@ function updateRowPositions() {
 		}
 	});
 }
+toggleExperienceType("internship");
+// MARK: - Work Experience
+
+const workExperienceData = [
+	{
+		name: "Amazon | AGI Team",
+		timeline: "May 2024 - August 2024",
+		description: "Software Development Engineer Intern",
+		logo: "images/amazon.png",
+		image: "images/experienceCards/bellevue2.png",
+		type: "internship",
+		tags: ["CloudFormation", "AWS", "NodeJS", "Bash", "Lambda", "EC2"],
+	},
+	{
+		name: "Amazon | Alexa AI Team",
+		timeline: "June 2023 - August 2023",
+		description: "Software Development Engineer Intern",
+		shortDescription:
+			"Created react-based app to collect audio data from users",
+		logo: "images/amazon.png",
+		image: "images/experienceCards/bellevue.jpg",
+		type: "internship",
+		tags: ["CloudFormation", "AWS", "NodeJS", "Bash", "Lambda", "EC2"],
+	},
+	{
+		name: "SightPlan",
+		timeline: "October 2022 - May 2023",
+		description: "IOS Development Intern",
+		image: "images/experienceCards/downtownOrlando.jpeg",
+		type: "internship",
+		tags: ["Swift", "AWS", "xCode", "objectiveC", "swiftui"],
+	},
+	{
+		name: "Amazon | Astro Team",
+		timeline: "June 2022 - August 2022",
+		description: "Software Development Engineer Intern",
+		image: "images/experienceCards/spheres.jpeg",
+		type: "internship",
+		tags: ["React", "AWS"],
+	},
+];
+
+// function populateWorkExperience() {
+// 	const $workExperienceContainer = $("#workExperienceContainer");
+// 	workExperienceData.forEach((experience) => {
+// 		const card = generateExperienceCard(experience);
+// 		$workExperienceContainer.append(card);
+// 	});
+// }
+
+// // populateWorkExperience();
+
+// const $workExperience = $("#workExperienceContainer");
+
+// $(document).on("scroll", function () {
+// 	// Get the position of #workExperience and see how close it is vertically to the center of the viewport. Then, create a percantage (where 0% is at center), and add this as a variable to the css
+// 	const workExperiencePosition = $workExperience.offset().top;
+// 	const workExperienceHeight = $workExperience.height();
+// 	const windowHeight = $(window).height();
+// 	const scrollPosition = $(document).scrollTop();
+// 	const scrollCenter = scrollPosition + windowHeight / 2;
+// 	const workExperienceCenter =
+// 		workExperiencePosition + workExperienceHeight / 2;
+// 	const distance = scrollCenter - workExperienceCenter;
+// 	const percentage = (distance / windowHeight) * 100;
+// 	$workExperience.css("--scroll-percentage", percentage);
+// });

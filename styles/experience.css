@@ -159,3 +159,16 @@
 		--gap-size: 20px;
 	}
 }
+
+#workExperienceContainer {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	justify-content: center;
+	padding: 2rem 0rem;
+}
+
+#workExperienceContainer > div {
+	transform: translateX(calc(var(--scroll-percentage, 0) * -1vw));
+	transition: transform 0.05s;
+}

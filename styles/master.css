@@ -37,7 +37,7 @@ body {
 }
 
 #backgroundCanvas {
-	filter: blur(100px) brightness(1.85);
+	filter: blur(100px) brightness(1.75);
 	background-image: var(--main-looping-gradient);
 	background-size: 200% 100%;
 	background-position: 0 0;

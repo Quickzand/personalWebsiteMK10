@@ -111,11 +111,13 @@
 	left: 0;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	transition: opacity 0.5s ease;
 }
 
 #projectScreen:not(.open) {
 	pointer-events: none;
 	z-index: -1;
+	opacity: 0;
 }
 
 #projectHeader {
@@ -124,9 +126,50 @@
 	align-items: center;
 	gap: 1rem;
 	margin-left: 1rem;
-
-	margin-top: 65px;
+	z-index: 100;
+	margin-top: 35px;
 	position: fixed;
+}
+
+#projectLinks {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	margin-left: 1rem;
+	margin-top: 140px;
+}
+
+#projectLinks a {
+	color: var(--foreground-color);
+	fill: var(--foreground-color);
+	text-decoration: none;
+	background-color: var(--glassy-background-color);
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	font-size: 1.5rem;
+	display: flex;
+	place-items: center;
+	flex-direction: row;
+	gap: 0.25rem;
+	box-shadow: var(--glassy-box-shadow);
+	cursor: pointer;
+	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out,
+		scale 0.15s ease-in-out, filter 0.15s ease-in-out;
+}
+
+#projectLinks a:hover {
+	filter: brightness(1.2);
+	scale: 1.05;
+}
+
+#projectLinks a:active {
+	filter: brightness(1.5);
+	scale: 0.95;
+}
+
+#projectLinks a svg {
+	height: 1.5ch;
+	cursor: pointer;
 }
 
 #projectHeader > * {
@@ -209,7 +252,6 @@
 	gap: 1rem;
 	overflow-x: scroll;
 	overflow-y: visible;
-	margin-top: 175px;
 	margin-left: 0;
 	margin-right: 0;
 	padding: 0;
@@ -223,7 +265,18 @@
 	margin: 1rem;
 	scroll-snap-align: center;
 	transform-origin: center center;
-	/* transform: scale(calc(calc(1 - var(--distance, 1)) * 0.9)); */
+	transform: scale(calc(calc(1 - var(--distance, 1)) * 0.9));
+	cursor: pointer;
+}
+
+#projectCarouselPhotos > img:hover {
+	transform: scale(calc(calc(1 - var(--distance, 1)) * 0.95));
+	filter: brightness(1.2);
+}
+
+#projectCarouselPhotos > img:active {
+	transform: scale(calc(calc(1 - var(--distance, 1)) * 0.85));
+	filter: brightness(1.5);
 }
 
 #projectCarouselPhotos > img:first-of-type {
@@ -240,7 +293,107 @@
 	box-shadow: var(--glassy-box-shadow);
 	padding: 1rem;
 	border-radius: 1rem;
+	white-space: pre-wrap;
 	line-height: 1.6;
+}
+
+.projectSection.imageParagraphSection {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: transparent;
+	box-shadow: none;
+	padding: 0;
+	border-radius: 0;
+	line-height: 1.6;
+	gap: 1rem;
+	align-items: center;
+}
+
+.projectSection.imageParagraphSection.reverse {
+	flex-direction: row-reverse;
+}
+
+.projectSection.imageParagraphSection p {
+	background-color: var(--glassy-background-color);
+	padding: 1rem;
+	border-radius: 1rem;
+	box-shadow: var(--glassy-box-shadow);
+	flex: 1;
+}
+
+.projectSection.imageParagraphSection img {
+	object-fit: contain;
+	max-height: max(
+		var(--text-height, 0px),
+		15rem
+	); /* Limit image height to the container's height */
+	width: auto; /* Adjust width to maintain aspect ratio */
+	max-width: 50%; /* Optional: Prevents the image from overflowing */
+	border-radius: 1rem;
+	cursor: pointer;
+	transition: filter 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.projectSection.imageParagraphSection img:hover {
+	filter: brightness(1.2);
+	transform: scale(1.05);
+}
+
+.projectSection.imageParagraphSection img:active {
+	filter: brightness(1.5);
+	transform: scale(0.95);
+}
+
+/* Collaborators stuff */
+.projectSection.collaboratorsSection {
+	background-color: transparent;
+	box-shadow: none;
+	padding: 0;
+	border-radius: 0;
+}
+
+.collaboratorsList {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.collaborator {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	background-color: var(--glassy-background-color);
+	padding: 0.5rem;
+	border-radius: 1.5rem;
+	box-shadow: var(--glassy-box-shadow);
+	cursor: pointer;
+	width: 10rem;
+	text-align: center;
+	color: var(--foreground-color);
+	text-decoration: none;
+
+	transition: filter 0.15s ease-in-out, scale 0.15s ease-in-out;
+}
+
+.collaborator:hover {
+	filter: brightness(1.2);
+	scale: 1.05;
+}
+
+.collaborator:active {
+	filter: brightness(1.5);
+	scale: 0.95;
+}
+
+.collaborator img {
+	height: 10rem;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	border-radius: 1rem;
+	cursor: pointer;
 }
 
 .projectSection h3 {
@@ -250,6 +403,15 @@
 	margin-top: 0;
 	/* Underline */
 	text-decoration: underline;
+}
+
+h3.projectSection {
+	font-family: var(--title-font);
+	font-size: 1.5rem;
+	margin-bottom: 0;
+	margin-top: 0;
+	display: inline-block;
+	font-weight: bold;
 }
 
 .projectSection p {
@@ -274,14 +436,14 @@
 	}
 
 	#projectCarouselPhotos > img {
-		height: 150px;
+		height: 250px;
 	}
 
 	#projectHeader {
 		margin-top: 0px;
 	}
 
-	#projectCarouselPhotos {
+	#projectLinks {
 		margin-top: 75px;
 	}
 }

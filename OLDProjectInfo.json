@@ -1,0 +1,600 @@
+{
+	"gizmo": {
+		"name": "Gizmo",
+		"time": "December 2023",
+		"preview": "images/projects/gizmoPreview.png",
+		"tags": [
+			{
+				"name": "SwiftUI"
+			},
+			{
+				"name": "Electron"
+			},
+			{
+				"name": "Node"
+			},
+			{
+				"name": "Websockets"
+			}
+		],
+		"links": [
+			{
+				"type": "github",
+				"href": "https://github.com/Quickzand/Shellhacks2023",
+				"name": "Github Repo"
+			},
+			{
+				"type": "devpost",
+				"href": "https://devpost.com/software/storyforge"
+			}
+		],
+		"sections": [
+			{
+				"title": "Description",
+				"content": "Gizmo is your digital bridge between your phone and computer, revolutionizing the way you interact with your devices. With Gizmo, you can seamlessly execute actions on your computer right from your phone, making multitasking a breeze. Whether you're looking to quickly launch a Siri shortcut, trigger a keyboard command, or even insert a frequently used text snippet, Gizmo has got you covered. Designed with user-friendliness in mind, Gizmo allows you to customize and create your own actions tailored to your needs. No more shuffling between devices or navigating through complex menus. With a few taps on your phone, you can have your computer respond instantly."
+			},
+			{
+				"type": "header",
+				"content": "Test"
+			},
+			{
+				"type": "imageParagraph",
+				"imgSrc": "images/projects/gizmo/gizmo2.png",
+				"content": "We built our project by creating a web app that enables the user to set up their character and make decisions. From there we connected all decisions to the ChatGPT-4 API and requested it to generate JSON file responses that contain different states and decisions."
+			},
+			{
+				"type": "imageParagraph",
+				"imgSrc": "images/projects/gizmo/gizmo2.png",
+				"content": "We built our project by creating a web app that enables the user to set up their character and make decisions. From there we connected all decisions to the ChatGPT-4 API and requested it to generate JSON file responses that contain different states and decisions.",
+				"reverse": "true"
+			},
+			{
+				"title": "How we built it",
+				"content": "We built our project by creating a web app that enables the user to set up their character and make decisions. From there we connected all decisions to the ChatGPT-4 API and requested it to generate JSON file responses that contain different states and decisions."
+			},
+			{
+				"title": "Inspiration",
+				"content": "The inspiration for our project came from playing Dungeons and Dragons, a game that we all find incredibly fun, but doesn't have any way to play by yourself. So we sought to make that."
+			},
+			{
+				"title": "Challenges",
+				"content": "A challenge we ran into was implementing the ChatGPT API in a way that would return consistently formatted JSON files that we would be able to handle, as well as making our API calls contain all necessary information to get our desired effect."
+			},
+			{
+				"title": "What we're proud of",
+				"content": "We are proud of our ability to use Git properly to allow for collaboration on the website and good version control of our code. Setting up the chatGPT-4 API was also something we are proud of because there was so much conflicting information on how to implement it."
+			}
+		],
+		"images": [
+			"images/projects/gizmo/gizmo1.gif",
+			"images/projects/gizmo/gizmo2.png",
+			"images/projects/gizmo/gizmo3.png"
+		]
+	},
+	"poosdker": {
+		"name": "POOSDKer",
+		"time": "May 2024",
+		"preview": "images/projects/poosdkerPreview.png",
+		"tags": [
+			{
+				"name": "SwiftUI",
+				"highlighted": "true"
+			},
+			{
+				"name": "Figma",
+				"icon": "images/tags/html.svg"
+			}
+		],
+		"links": [
+			{
+				"type": "github",
+				"href": "https://github.com/Quickzand/Shellhacks2023",
+				"name": "Github Repo"
+			},
+			{
+				"type": "devpost",
+				"href": "https://devpost.com/software/storyforge"
+			}
+		],
+		"sections": [
+			{
+				"title": "Description",
+				"content": "POOSDker is a semester-long project I worked on with my classmates. We built an game in SwiftUI utilizing custom networking infrastructure to allow for local multiplayer poker."
+			},
+			{
+				"title": "How we built it",
+				"content": "We built our project by creating a web app that enables the user to set up their character and make decisions. From there we connected all decisions to the ChatGPT-4 API and requested it to generate JSON file responses that contain different states and decisions."
+			},
+			{
+				"title": "Inspiration",
+				"content": "The inspiration for our project came from playing Dungeons and Dragons, a game that we all find incredibly fun, but doesn't have any way to play by yourself. So we sought to make that."
+			},
+			{
+				"title": "Challenges",
+				"content": "A challenge we ran into was implementing the ChatGPT API in a way that would return consistently formatted JSON files that we would be able to handle, as well as making our API calls contain all necessary information to get our desired effect."
+			},
+			{
+				"title": "What we're proud of",
+				"content": "We are proud of our ability to use Git properly to allow for collaboration on the website and good version control of our code. Setting up the chatGPT-4 API was also something we are proud of because there was so much conflicting information on how to implement it."
+			},
+			{
+				"type": "collaborators",
+				"collaborators": [
+					{
+						"name": "Maximus Smith",
+						"href": "www.maximussmith.info",
+						"imgSrc": "images/collaborators/maximus.png"
+					},
+					{
+						"name": "Seth Lenhof",
+						"href": "https://sethlenhof.com/",
+						"imgSrc": "images/collaborators/seth.png"
+					}
+				]
+			}
+		],
+		"images": [
+			"images/projects/gizmo/gizmo1.png",
+			"images/projects/gizmo/gizmo2.png"
+		]
+	},
+	"storyForge": {
+		"name": "StoryForge",
+		"time": "September 2023",
+		"preview": "images/projects/storyForgePreview.png",
+		"tags": [
+			{
+				"name": "ChatGPT",
+				"highlighted": "true"
+			},
+			{
+				"name": "HTML",
+				"icon": "images/tags/html.svg"
+			},
+			{
+				"name": "CSS",
+				"icon": "images/tags/css.svg"
+			},
+			{
+				"name": "JavaScript",
+				"icon": "images/tags/javascript.svg"
+			}
+		],
+		"links": [
+			{
+				"type": "github",
+				"href": "https://github.com/Quickzand/Shellhacks2023",
+				"name": "Github Repo"
+			},
+			{
+				"type": "devpost",
+				"href": "https://devpost.com/software/storyforge"
+			}
+		],
+		"sections": [
+			{
+				"title": "Description",
+				"content": "StoryForge is my groups submission for the ShellHacks 2023 hackathon. Its a webapp, which allows users to play Dungeons and Dragons with an AI dungeon-master, which keeps track of everything, while sculpting a story. Players are able to interract however they like by just typing to the Dungeon Master, but we also added quality of life quick actions, as well as environmental effects on screen depending on where they are in game."
+			},
+			{
+				"title": "How we built it",
+				"content": "We built our project by creating a web app that enables the user to set up their character and make decisions. From there we connected all decisions to the ChatGPT-4 API and requested it to generate JSON file responses that contain different states and decisions."
+			},
+			{
+				"title": "Inspiration",
+				"content": "The inspiration for our project came from playing Dungeons and Dragons, a game that we all find incredibly fun, but doesn't have any way to play by yourself. So we sought to make that."
+			},
+			{
+				"title": "Challenges",
+				"content": "A challenge we ran into was implementing the ChatGPT API in a way that would return consistently formatted JSON files that we would be able to handle, as well as making our API calls contain all necessary information to get our desired effect."
+			},
+			{
+				"title": "What we're proud of",
+				"content": "We are proud of our ability to use Git properly to allow for collaboration on the website and good version control of our code. Setting up the chatGPT-4 API was also something we are proud of because there was so much conflicting information on how to implement it."
+			},
+			{
+				"type": "collaborators",
+				"collaborators": [
+					{
+						"name": "Maximus Smith",
+						"href": "https://www.maximussmith.info/",
+						"imgSrc": "images/collaborators/maximus.png"
+					},
+					{
+						"name": "Seth Lenhof",
+						"href": "https://sethlenhof.com/",
+						"imgSrc": "images/collaborators/seth.png"
+					},
+					{
+						"name": "Olivia Harris",
+						"href": "https://alexharris.design",
+						"imgSrc": "images/collaborators/olivia.png"
+					}
+				]
+			}
+		],
+		"images": [
+			"images/projects/storyForge/storyForge1.png",
+			"images/projects/storyForge/storyForge2.png",
+			"images/projects/storyForge/storyForge3.png",
+			"images/projects/storyForge/storyForge4.png"
+		]
+	},
+	"dequeue": {
+		"name": "Dequeue",
+		"time": "November 2022",
+		"preview": "images/projects/dequeuePreview.png",
+		"tags": [
+			{
+				"name": "🏆 Second Place Winner",
+				"highlighted": "true"
+			},
+			{
+				"name": "Electron",
+				"icon": "images/tags/electron.svg"
+			},
+			{
+				"name": "Node.js",
+				"icon": "images/tags/node.svg"
+			},
+			{
+				"name": "Python",
+				"icon": "images/tags/python.svg"
+			},
+			{
+				"name": "React Native",
+				"icon": "images/tags/pwa.svg"
+			}
+		],
+		"links": [
+			{
+				"type": "github",
+				"href": "https://github.com/Quickzand/DequeueMobile",
+				"name": "Mobile Repo"
+			},
+			{
+				"type": "github",
+				"href": "https://github.com/HarrisAlex/DesktopDequeue",
+				"name": "Desktop Repo"
+			},
+			{
+				"type": "devpost",
+				"href": "https://devpost.com/software/dequeue-m6ocaz"
+			}
+		],
+		"sections": [
+			{
+				"title": "Description",
+				"content": "Dequeue is my team’s submission for a semester long hackathon held by KnightHacks. It’s inspiration began from the Stream deck, a device used by streamers that acts as a visual way to interact with shortcuts on your computer. Rather than having to memorize every possible computer shortcut or buy an expensive device such as the stream deck, Dequeue allows you to display and quickly access shortcuts right on your phone. Dequeue was build using React Native for the mobile phone app and Electron for the desktop app, allowing it to run on numerous platforms with ease. All data is stored locally on the computer and transmitted back and forth via LAN to the phone."
+			},
+			{
+				"title": "Inspiration",
+				"content": "The inspiration for our project came from the stream deck, an expensive piece of equipment streamers use to control tools and execute shortcuts on their computers. It essentially serves as an additional keyboard that can be programmed for macros or other actions. We thought about a way we could create something similar using an app on our phone and our computer, without the expensive price tag."
+			},
+			{
+				"title": "Challenges",
+				"content": "The main challenge we ran into was the communication between the phone and the computer and the best way to allow the devices to communicate. An additional challenge we had was getting the desktop app to record the keys the way we wanted, allowing it to record the modifiers in addition to the characters."
+			},
+			{
+				"type": "collaborators",
+				"collaborators": [
+					{
+						"name": "Seth Lenhof",
+						"href": "https://sethlenhof.com/",
+						"imgSrc": "images/collaborators/seth.png"
+					},
+					{
+						"name": "Olivia Harris",
+						"href": "https://alexharris.design",
+						"imgSrc": "images/collaborators/olivia.png"
+					}
+				]
+			}
+		],
+		"images": [
+			"images/projects/dequeue/dequeue1.png",
+			"images/projects/dequeue/dequeue2.gif",
+			"images/projects/dequeue/dequeue3.gif",
+			"images/projects/dequeue/dequeue4.gif",
+			"images/projects/dequeue/dequeue5.gif"
+		]
+	},
+	"animatedBG": {
+		"hasPassword": true,
+		"name": "Animated Desktop",
+		"time": "September 2023",
+		"preview": "images/projects/animatedBGPreview.png",
+		"tags": [
+			{
+				"name": "Case Study",
+				"highlighted": "true"
+			},
+			{
+				"name": "HTML",
+				"icon": "images/tags/electron.svg"
+			},
+			{
+				"name": "Node.js",
+				"icon": "images/tags/node.svg"
+			},
+			{
+				"name": "Python",
+				"icon": "images/tags/python.svg"
+			},
+			{
+				"name": "React Native",
+				"icon": "images/tags/pwa.svg"
+			}
+		],
+		"links": [
+			{
+				"type": "github",
+				"href": "https://github.com/Quickzand/DequeueMobile",
+				"name": "Mobile Repo"
+			},
+			{
+				"type": "github",
+				"href": "https://github.com/HarrisAlex/DesktopDequeue",
+				"name": "Desktop Repo"
+			},
+			{
+				"type": "collaborator",
+				"href": "https://www.sethlenhof.com",
+				"collaboratorName": "Seth Lenhof"
+			},
+			{
+				"type": "collaborator",
+				"href": "https://alexharris.design",
+				"collaboratorName": "Alex Harris"
+			},
+			{
+				"type": "devpost",
+				"href": "https://devpost.com/software/dequeue-m6ocaz"
+			}
+		],
+		"sections": [
+			{
+				"title": "Description",
+				"content": "My animated desktop background is a project I made for fun. I wanted to create a desktop background that was animated and interactive. I decided to make a background that would display a random quote from a list of quotes I had, and then allow the user to click on the quote to get a new one. I also wanted to make the background interactive, so I made it so that the user could click on the background to create a ripple effect. The background was made using HTML, CSS, and JavaScript."
+			},
+			{
+				"title": "Inspiration",
+				"content": "The inspiration for our project came from the stream deck, an expensive piece of equipment streamers use to control tools and execute shortcuts on their computers. It essentially serves as an additional keyboard that can be programmed for macros or other actions. We thought about a way we could create something similar using an app on our phone and our computer, without the expensive price tag."
+			},
+			{
+				"title": "Challenges",
+				"content": "The main challenge we ran into was the communication between the phone and the computer and the best way to allow the devices to communicate. An additional challenge we had was getting the desktop app to record the keys the way we wanted, allowing it to record the modifiers in addition to the characters."
+			}
+		],
+		"images": [
+			"images/projects/dequeue/dequeue1.png",
+			"images/projects/dequeue/dequeue2.gif",
+			"images/projects/dequeue/dequeue3.gif",
+			"images/projects/dequeue/dequeue4.gif",
+			"images/projects/dequeue/dequeue5.gif"
+		]
+	},
+	"homesub": {
+		"name": "Homesub",
+		"time": "April 2020",
+		"sections": [
+			{
+				"title": "Description",
+				"content": "Homesub is my coronavirus relief effort. As someone who has experienced firsthand how difficult it can be to be completely disconnected from the physical environment of school, I wanted to find a way to help my classmates through the rough transition period to online learning. Seeing the difficulties that computer science students had with writing their code from home, I created a website for them to write, test, and submit all of their code from. Homesub was my first time working with any sort of backend, and was a valuable learning experience when it came to working with server side development."
+			}
+		],
+		"links": [
+			{
+				"href": "https://github.com/Quickzand/Homesub",
+				"type": "Github"
+			}
+		],
+		"tags": [
+			{
+				"name": "HTML"
+			},
+			{
+				"name": "CSS"
+			},
+			{
+				"name": "JavaScript"
+			},
+			{
+				"name": "PHP"
+			},
+			{
+				"name": "mySQL"
+			}
+		],
+		"preview": "images/projects/homesubPreview.png",
+		"images": [
+			"images/projects/homesub/homesub1.png",
+			"images/projects/homesub/homesub2.png"
+		]
+	},
+	"wikiWhat": {
+		"name": "Wiki What",
+		"preview": "images/projects/WWPreview.png",
+		"id": "wikiWhat",
+		"sections": [
+			{
+				"title": "Description",
+				"content": "WikiWhat is a game I built for my friends and I. The goal is, given only images from a wikiHow article, guess what article the images correspond to. The project randomly pulls the article and images contained within it, as well as pulling the names of other, incorrect articles. This project had me dealing a lot with game design as well as database development and developing a python backend."
+			}
+		],
+		"links": [
+			{
+				"href": "https://github.com/Quickzand/wikiWhat",
+				"type": "Github"
+			}
+		],
+		"tags": [
+			{
+				"name": "HTML"
+			},
+			{
+				"name": "CSS"
+			},
+			{
+				"name": "JavaScript"
+			},
+			{
+				"name": "Python"
+			}
+		],
+		"images": [
+			"images/projects/wikiWhat/wikiWhat1.png",
+			"images/projects/wikiWhat/wikiWhat2.png"
+		]
+	},
+	"wifiPanda": {
+		"name": "Wifi Panda",
+		"preview": "images/projects/wifiPandaPreview.png",
+		"hasPassword": true,
+		"sections": [
+			{
+				"title": "Description",
+				"content": "For the HackMIT hackathon, my group and I made Wifi Panda. Wifi Panda is a small web app that pins all nearby wifi hotspots, and specifies libraries and coffee shops. The app uses the open maps api to retrieve wifi hotspot data as well as the google maps api to display the pins on a map."
+			}
+		],
+		"tags": [
+			{
+				"name": "HTML"
+			},
+			{
+				"name": "CSS"
+			},
+			{
+				"name": "JavaScript"
+			},
+			{
+				"name": "PHP"
+			}
+		],
+		"images": [
+			"images/projects/dequeue/dequeue1.png",
+			"images/projects/dequeue/dequeue2.png",
+			"images/projects/dequeue/dequeue3.png",
+			"images/projects/dequeue/dequeue4.png",
+			"images/projects/dequeue/dequeue5.png",
+			"images/projects/dequeue/dequeue6.png",
+			"images/projects/dequeue/dequeue6.png",
+			"images/projects/dequeue/dequeue6.png"
+		]
+	},
+	"meetsStories": {
+		"name": "Meets Stories",
+		"preview": "images/projects/meetsPreview.png",
+		"id": "wikiWhat",
+		"hasPassword": true,
+		"sections": [
+			{
+				"title": "Description",
+				"content": "Meets Stories is a web application that allows users to create and share stories with their friends. Users can create stories by uploading images and videos, and then share them with their friends. Meets Stories was built using React, Node.js, Express, and MongoDB."
+			}
+		],
+		"tags": [
+			{
+				"name": "HTML"
+			},
+			{
+				"name": "CSS"
+			},
+			{
+				"name": "JavaScript"
+			},
+			{
+				"name": "PHP"
+			},
+			{
+				"name": "mySQL"
+			}
+		],
+		"images": [
+			"images/projects/dequeue/dequeue1.png",
+			"images/projects/dequeue/dequeue2.png",
+			"images/projects/dequeue/dequeue3.png",
+			"images/projects/dequeue/dequeue4.png",
+			"images/projects/dequeue/dequeue5.png",
+			"images/projects/dequeue/dequeue6.png",
+			"images/projects/dequeue/dequeue6.png",
+			"images/projects/dequeue/dequeue6.png"
+		]
+	},
+	"tankz": {
+		"name": "Tankz",
+		"preview": "images/projects/tankzPreview.png",
+		"hasPassword": true,
+		"sections": [
+			{
+				"title": "Description",
+				"content": "Tankz is a web application that allows users to search for a topic and get a summarized version of the Wikipedia article. The application also allows users to save articles to their account for later viewing. Tankz was built using React, Node.js, Express, and MongoDB."
+			}
+		],
+		"tags": [
+			{
+				"name": "HTML"
+			},
+			{
+				"name": "CSS"
+			},
+			{
+				"name": "JavaScript"
+			},
+			{
+				"name": "Node.js"
+			},
+			{
+				"name": "mySQL"
+			},
+			{
+				"name": "WebSockets"
+			}
+		],
+		"images": [
+			"images/projects/dequeue/dequeue1.png",
+			"images/projects/dequeue/dequeue2.png",
+			"images/projects/dequeue/dequeue3.png",
+			"images/projects/dequeue/dequeue4.png",
+			"images/projects/dequeue/dequeue5.png",
+			"images/projects/dequeue/dequeue6.png",
+			"images/projects/dequeue/dequeue6.png",
+			"images/projects/dequeue/dequeue6.png"
+		]
+	},
+	"hostDirectory": {
+		"name": "Host Directory",
+		"preview": "images/projects/directoryPreview.png",
+		"hasPassword": true,
+		"sections": [
+			{
+				"title": "Description",
+				"content": "Host Directory is a web application that allows users to search for a topic and get a summarized version of the Wikipedia article. The application also allows users to save articles to their account for later viewing. Host Directory was built using React, Node.js, Express, and MongoDB."
+			}
+		],
+		"tags": [
+			{
+				"name": "HTML"
+			},
+			{
+				"name": "CSS"
+			},
+			{
+				"name": "JavaScript"
+			},
+			{
+				"name": "PHP"
+			}
+		],
+		"images": [
+			"images/projects/dequeue/dequeue1.png",
+			"images/projects/dequeue/dequeue2.png",
+			"images/projects/dequeue/dequeue3.png",
+			"images/projects/dequeue/dequeue4.png",
+			"images/projects/dequeue/dequeue5.png",
+			"images/projects/dequeue/dequeue6.png",
+			"images/projects/dequeue/dequeue6.png",
+			"images/projects/dequeue/dequeue6.png"
+		]
+	}
+}

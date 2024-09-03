@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="styles/projects.css" />
 		<link rel="stylesheet" href="styles/skills.css" />
 		<link rel="stylesheet" href="styles/contact.css" />
+		<link rel="stylesheet" href="styles/misc.css" />
+
 		<script src="scripts/jquery.js"></script>
 		<script src="scripts/jquery.cookie.js"></script>
 		<script src="scripts/nav.js" async defer></script>
@@ -23,6 +25,7 @@
 		<script src="scripts/colorPalettes.js" async defer></script>
 		<script src="scripts/contact.js" async defer></script>
 		<script src="scripts/animateOnScroll.js" async defer></script>
+		<script src="scripts/imageModal.js" async defer></script>
 	</head>
 	<body>
 		<nav>
@@ -205,15 +208,15 @@
 			<section id="contact">
 				<h2>Contact</h2>
 				<form onsubmit="event.preventDefault(); attemptSubmission();">
-					<div class="inFromLeft">
+					<div class="">
 						<input type="text" name="name" id="name" placeholder="" />
 						<label for="name">Name</label>
 					</div>
-					<div class="inFromLeft">
+					<div class="">
 						<input type="text" name="email" id="email" placeholder="" />
 						<label for="email">Email</label>
 					</div>
-					<div class="inFromRight">
+					<div class="">
 						<label for="message"></label>
 						<textarea
 							name="message"
@@ -232,10 +235,17 @@
 				<h2 id="projectName">Gizmo</h2>
 			</div>
 
+			<div id="projectLinks" class="leftSideSpread"></div>
+
 			<div id="projectCarouselPhotosContainer" class="leftSideSpread">
 				<div id="projectCarouselPhotos"></div>
 			</div>
 			<div id="projectSections"></div>
+		</div>
+
+		<div id="imageModal">
+			<div id="imageModalClose">✕</div>
+			<img src="images/headLogo.svg" alt="Expanded image" />
 		</div>
 	</body>
 	<script src="scripts/backgroundController.js"></script>

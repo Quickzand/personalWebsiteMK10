@@ -1,0 +1,47 @@
+#imageModal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+	backdrop-filter: blur(10px);
+	--webkit-backdrop-filter: blur(10px);
+	transition: opacity 0.5s ease;
+}
+
+#imageModal:not(.open) {
+	pointer-events: none;
+	opacity: 0;
+}
+
+#imageModal img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 90vw;
+	max-height: 90vh;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+#imageModalClose {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	cursor: pointer;
+	background-color: var(--glassy-background-color);
+	backdrop-filter: blur(10px);
+	--webkit-backdrop-filter: blur(10px);
+	padding: 1rem;
+	border-radius: 1rem;
+	box-shadow: var(--glassy-box-shadow);
+	height: 2rem;
+	width: 2rem;
+	display: grid;
+	place-items: center;
+	font-size: 1.5rem;
+}

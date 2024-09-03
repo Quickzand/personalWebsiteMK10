@@ -102,6 +102,9 @@ function createCells() {
 let cells = createCells();
 
 function animateRandomBlob(cells, duration) {
+	// If its within 5 seconds of the end of the minute, dont animate
+	const now = new Date();
+	if (now.getSeconds() > 50 || now.getSeconds() < 5) return;
 	const centerX = Math.floor(Math.random() * colCount);
 	const centerY = Math.floor(Math.random() * rowCount);
 	const maxRadius = 5; // Maximum radius of influence for the blob
@@ -132,6 +135,61 @@ function animateRandomBlob(cells, duration) {
 		})
 	);
 }
+
+// Create an explosion starting in the center and expanding out over time
+function animateExplosion() {
+	// Starting from the center, animate outwards in a circle
+	console.log("EXPLODING");
+
+	var centerX, centerY;
+
+	if (colCount % 2 === 0) {
+		centerX = colCount / 2 - 1;
+	} else {
+		centerX = Math.floor(colCount / 2);
+	}
+
+	if (rowCount % 2 === 0) {
+		centerY = rowCount / 2 - 1;
+	} else {
+		centerY = Math.floor(rowCount / 2);
+	}
+
+	var maxRadius = Math.max(colCount, rowCount) / 2;
+	var radius = 0;
+
+	function animateCircle() {
+		for (var i = 0; i < rowCount; i++) {
+			for (var j = 0; j < colCount; j++) {
+				// Check if the cell is approximately at the current radius from the center
+				var distance = Math.sqrt(
+					Math.pow(j - centerX, 2) + Math.pow(i - centerY, 2)
+				);
+				if (Math.abs(distance - radius) < 0.5) {
+					cells[i][j].flash(10, 0);
+				}
+			}
+		}
+
+		radius += 1;
+
+		// If the radius is smaller than the max radius, continue expanding
+		if (radius < maxRadius + 5) {
+			setTimeout(animateCircle, 100); // adjust the time as needed
+		}
+	}
+
+	animateCircle();
+}
+
+// Every second animate a explosion
+setInterval(() => {
+	// Animate if its the end of the minute
+	const now = new Date();
+	if (now.getSeconds() == 0) {
+		animateExplosion();
+	}
+}, 1000);
 
 // To manage animations:
 function startBlobAnimations() {
