@@ -15,7 +15,7 @@
 	flex-direction: column;
 	background-color: var(--glassy-background-color);
 	backdrop-filter: blur(10px);
-	--webkit-backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 
 	padding: 1rem;
 	border-radius: 1rem;
@@ -114,6 +114,10 @@
 	transition: opacity 0.5s ease;
 }
 
+#projectScreen > :last-child {
+	margin-bottom: 50vh;
+}
+
 #projectScreen:not(.open) {
 	pointer-events: none;
 	z-index: -1;
@@ -137,6 +141,8 @@
 	gap: 1rem;
 	margin-left: 1rem;
 	margin-top: 140px;
+	width: calc(100vw - 2rem);
+	overflow-x: scroll;
 }
 
 #projectLinks a {
@@ -151,7 +157,8 @@
 	place-items: center;
 	flex-direction: row;
 	gap: 0.25rem;
-	box-shadow: var(--glassy-box-shadow);
+	box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.15);
+	white-space: nowrap;
 	cursor: pointer;
 	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out,
 		scale 0.15s ease-in-out, filter 0.15s ease-in-out;
@@ -175,7 +182,7 @@
 #projectHeader > * {
 	background-color: var(--glassy-background-color);
 	backdrop-filter: blur(10px);
-	--webkit-backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 	padding: 1rem;
 	border-radius: 1rem;
 	box-shadow: var(--glassy-box-shadow);
@@ -445,5 +452,10 @@ h3.projectSection {
 
 	#projectLinks {
 		margin-top: 75px;
+	}
+
+	.projectSection.imageParagraphSection {
+		display: flex;
+		flex-direction: column;
 	}
 }

@@ -7,7 +7,7 @@
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 100;
 	backdrop-filter: blur(10px);
-	--webkit-backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 	transition: opacity 0.5s ease;
 }
 
@@ -35,7 +35,7 @@
 	cursor: pointer;
 	background-color: var(--glassy-background-color);
 	backdrop-filter: blur(10px);
-	--webkit-backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 	padding: 1rem;
 	border-radius: 1rem;
 	box-shadow: var(--glassy-box-shadow);
