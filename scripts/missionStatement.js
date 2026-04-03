@@ -1,8 +1,9 @@
 const missionStatement =
-	"Hey, I'm Matthew! I am a Computer Science student at the University of Central Florida, with an extensive background in Fullstack Web Development. My goal as a Software Engineer is to create code with perspective and purpose - and to ultimately, make the world a more human friendly place. Here's how I've been working towards that goal:";
+	"Hey, I'm Matthew! I am a Software Engineer, with an extensive background in Fullstack and Mobile Development. My goal is to create code with perspective and purpose - and to ultimately, make the world a more human friendly place. Here's how I've been working towards that goal:";
 
 const gradientTexts = [
-	"Fullstack Web Development",
+	"Fullstack",
+	"Mobile Development",
 	"Software Engineer",
 	"Computer Science",
 ];

@@ -138,8 +138,6 @@ function animateRandomBlob(cells, duration) {
 
 // Create an explosion starting in the center and expanding out over time
 function animateExplosion() {
-	// Starting from the center, animate outwards in a circle
-	console.log("EXPLODING");
 
 	var centerX, centerY;
 

@@ -1,4 +1,76 @@
 {
+    "itemize": {
+        "name": "Itemize",
+        "time": "September 2024",
+        "preview": "images/projects/itemizePreview.png",
+        "tags": [
+            {
+                "name": "SwiftUI",
+                "highlighted": "true"
+            },
+            {
+                "name": "Figma"
+            },
+            {
+                "name": "PHP"
+            },
+            {
+                "name": "Swift"
+            },
+            {
+                "name": "ChatGPT"
+            }
+        ],
+        "links": [
+            {
+                "type": "github",
+                "href": "https://github.com/Quickzand/Shellhacks2024",
+                "name": "Github Repo"
+            },
+            {
+                "type": "devpost",
+                "href": "https://devpost.com/software/itemize-8lhb2c"
+            }
+        ],
+        "sections": [
+            {
+                "title": "Description",
+                "content": "Itemize streamlines how you decide what cook with with what you have, even if you don't have a clue. Our team has spent a lot of time staring at our fridges not sure what to cook, or even what we really have so for our submission to Shellhacks 2024, we decided to focus on this. Itemize arose from a desire to organize one of the most important, and most expensive, parts of our lives."
+            },
+            {
+                "title": "Building the App",
+                "content": "Itemize utilizes SwiftUI for all frontend functionality, and a PHP backend for planned cloud storage. At the core, Itemize uses the GPT API to analyze receipt scans, categorize data, and come up with new recipes. A lot of our time was spent figuring out a flow that felt natural, yet not too overly simple to be not useful. The balance was difficult to strike but we ultimately settled on an app with comfortable user experience, and large utility. Our MVP is completely functional by the end of this hackathon, and has resulted in an app all of our team members would be delighted to use. Ultimately, it was most rewarding to see how our combined efforts came together to make such a full product."
+            },
+            {
+                "title": "The future...",
+                "content": "We all had the opportunity to learn some incredibly useful and cool technologies throughout this hackathon, such as SwiftUI and PHP, as well as research into new technologies like Progressive Web Apps. Everything we gained throughout this experience will be indelibly useful as we continue to develop Itemize in the future. Eventually, we plan to fully integrate our backend cloud storage, and ultimately have a multi-platform system for ease of usage. Ideally, the general flow of the app would not change, but extra modalities and UI tweaks and capabilities are planned in the future."
+            },
+            {
+                "type": "collaborators",
+                "collaborators": [
+                    {
+                        "name": "Seth Lenhof",
+                        "href": "https://sethlenhof.com/",
+                        "imgSrc": "images/collaborators/seth.png"
+                    },
+                    {
+                        "name": "Olivia Harris",
+                        "href": "https://alexharris.design",
+                        "imgSrc": "images/collaborators/olivia.png"
+                    }
+                ]
+            }
+        ],
+        "images": [
+            "images/projects/itemize/itemize1.png",
+            "images/projects/itemize/itemize2.png",
+            "images/projects/itemize/itemize3.png",
+            "images/projects/itemize/itemize4.png",
+            "images/projects/itemize/itemize5.png",
+            "images/projects/itemize/itemize6.png",
+            "images/projects/itemize/itemize7.gif"
+        ]
+    },
     "gizmo": {
         "name": "Gizmo",
         "time": "December 2023",

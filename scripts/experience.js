@@ -1,11 +1,20 @@
 const experienceData = [
+{
+		name: "Amazon | AGI Team",
+		timeline: "May 2025 - Present",
+		description: "Software Development Engineer",
+		logo: "images/amazon.png",
+		image: "images/experienceCards/bellevue2.png",
+		type: "work",
+		tags: ["CloudFormation", "AWS", "NodeJS", "Bash", "Lambda", "EC2"],
+	},
 	{
 		name: "Amazon | AGI Team",
 		timeline: "May 2024 - August 2024",
 		description: "Software Development Engineer Intern",
 		logo: "images/amazon.png",
 		image: "images/experienceCards/bellevue2.png",
-		type: "internship",
+		type: "work",
 		tags: ["CloudFormation", "AWS", "NodeJS", "Bash", "Lambda", "EC2"],
 	},
 	{
@@ -16,13 +25,18 @@ const experienceData = [
 			"Created react-based app to collect audio data from users",
 		logo: "images/amazon.png",
 		image: "images/experienceCards/bellevue.jpg",
-		type: "internship",
+		type: "work",
 		tags: ["CloudFormation", "AWS", "NodeJS", "Bash", "Lambda", "EC2"],
 	},
 	{
 		name: "ShellHacks Hackathon",
+		timeline: "September 2024",
+		image: "images/experienceCards/shellHacks2.png",
+		type: "competition",
+	},
+	{
+		name: "ShellHacks Hackathon",
 		timeline: "September 2023",
-		logo: "images/sightplan.png",
 		image: "images/experienceCards/shellHacks.webp",
 		type: "competition",
 	},
@@ -31,7 +45,7 @@ const experienceData = [
 		timeline: "October 2022 - May 2023",
 		description: "IOS Development Intern",
 		image: "images/experienceCards/downtownOrlando.jpeg",
-		type: "internship",
+		type: "work",
 		tags: ["Swift", "AWS", "xCode", "objectiveC", "swiftui"],
 	},
 	{
@@ -52,7 +66,7 @@ const experienceData = [
 		timeline: "June 2022 - August 2022",
 		description: "Software Development Engineer Intern",
 		image: "images/experienceCards/spheres.jpeg",
-		type: "internship",
+		type: "work",
 		tags: ["React", "AWS"],
 	},
 	{
@@ -63,7 +77,7 @@ const experienceData = [
 	},
 	{
 		name: "UCF",
-		timeline: "Fall 2021 - Fall 2023",
+		timeline: "Fall 2021 - Fall 2024",
 		description: "College Of Engineering And Computer Science",
 		logo: "images/amazon.png",
 		type: "education",
@@ -237,47 +251,7 @@ function updateRowPositions() {
 		}
 	});
 }
-toggleExperienceType("internship");
-// MARK: - Work Experience
-
-const workExperienceData = [
-	{
-		name: "Amazon | AGI Team",
-		timeline: "May 2024 - August 2024",
-		description: "Software Development Engineer Intern",
-		logo: "images/amazon.png",
-		image: "images/experienceCards/bellevue2.png",
-		type: "internship",
-		tags: ["CloudFormation", "AWS", "NodeJS", "Bash", "Lambda", "EC2"],
-	},
-	{
-		name: "Amazon | Alexa AI Team",
-		timeline: "June 2023 - August 2023",
-		description: "Software Development Engineer Intern",
-		shortDescription:
-			"Created react-based app to collect audio data from users",
-		logo: "images/amazon.png",
-		image: "images/experienceCards/bellevue.jpg",
-		type: "internship",
-		tags: ["CloudFormation", "AWS", "NodeJS", "Bash", "Lambda", "EC2"],
-	},
-	{
-		name: "SightPlan",
-		timeline: "October 2022 - May 2023",
-		description: "IOS Development Intern",
-		image: "images/experienceCards/downtownOrlando.jpeg",
-		type: "internship",
-		tags: ["Swift", "AWS", "xCode", "objectiveC", "swiftui"],
-	},
-	{
-		name: "Amazon | Astro Team",
-		timeline: "June 2022 - August 2022",
-		description: "Software Development Engineer Intern",
-		image: "images/experienceCards/spheres.jpeg",
-		type: "internship",
-		tags: ["React", "AWS"],
-	},
-];
+toggleExperienceType("work");
 
 // function populateWorkExperience() {
 // 	const $workExperienceContainer = $("#workExperienceContainer");

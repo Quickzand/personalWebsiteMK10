@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Floating, Randomly Shaped Mesh-Like Gradient</title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				background: #111; /* fallback color */
+				overflow: hidden;
+			}
+
+			.container {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+
+			.gradient-blob {
+				position: absolute;
+				border-radius: 50%; /* Combined with differing width/height => elliptical shape */
+				opacity: 0.6;
+				mix-blend-mode: screen;
+				/* We'll set each blob's size via JS */
+			}
+
+			/* Example colors; you can customize as you like */
+			#blob1 {
+				background: radial-gradient(
+					ellipse at center,
+					#ff5c33 0%,
+					transparent 60%
+				);
+			}
+			#blob2 {
+				background: radial-gradient(
+					ellipse at center,
+					#ff66ff 0%,
+					transparent 60%
+				);
+			}
+			#blob3 {
+				background: radial-gradient(
+					ellipse at center,
+					#ffff66 0%,
+					transparent 60%
+				);
+			}
+			#blob4 {
+				background: radial-gradient(
+					ellipse at center,
+					#00ffcc 0%,
+					transparent 60%
+				);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="gradient-blob" id="blob1"></div>
+			<div class="gradient-blob" id="blob2"></div>
+			<div class="gradient-blob" id="blob3"></div>
+			<div class="gradient-blob" id="blob4"></div>
+		</div>
+
+		<script>
+			// Array of blob data: each has element, position (x,y), velocity (vx,vy),
+			// plus dynamic size (width, height) for elliptical shapes.
+			const blobs = [
+				{ el: document.getElementById("blob1") },
+				{ el: document.getElementById("blob2") },
+				{ el: document.getElementById("blob3") },
+				{ el: document.getElementById("blob4") },
+			];
+
+			// Helper to randomize a blob's shape & size (width & height in VW).
+			function randomizeShape(blob) {
+				// Range: e.g., min 30vw, max 60vw (tweak to taste)
+				const minSize = 20;
+				const maxSize = 60;
+				const widthVW = minSize + Math.random() * (maxSize - minSize);
+				const heightVW = minSize + Math.random() * (maxSize - minSize);
+				blob.width = widthVW;
+				blob.height = heightVW;
+
+				// Apply to DOM
+				blob.el.style.width = blob.width + "vw";
+				blob.el.style.height = blob.height + "vw";
+			}
+
+			// Initialize positions, velocities, and shapes
+			blobs.forEach((blob) => {
+				// Start at random position in 0-100% range
+				blob.x = Math.random() * 100;
+				blob.y = Math.random() * 100;
+
+				// Random small velocity
+				blob.vx = (Math.random() - 0.5) * 0.04;
+				blob.vy = (Math.random() - 0.5) * 0.04;
+
+				// Randomize shape & size
+				randomizeShape(blob);
+
+				// Position them initially
+				blob.el.style.left = blob.x + "%";
+				blob.el.style.top = blob.y + "%";
+			});
+
+			function animate() {
+				requestAnimationFrame(animate);
+
+				blobs.forEach((blob) => {
+					// Update position
+					blob.x += blob.vx;
+					blob.y += blob.vy;
+
+					// Bounce off edges
+					if (blob.x < 0 || blob.x > 100) {
+						blob.x = Math.min(Math.max(blob.x, 0), 100);
+						blob.vx *= -1;
+					}
+					if (blob.y < 0 || blob.y > 100) {
+						blob.y = Math.min(Math.max(blob.y, 0), 100);
+						blob.vy *= -1;
+					}
+
+					// Occasionally randomize shape (e.g. ~0.2% chance per frame)
+					// Increase or decrease this probability as desired
+					if (Math.random() < 0.002) {
+						randomizeShape(blob);
+					}
+
+					// Update DOM
+					blob.el.style.left = blob.x + "%";
+					blob.el.style.top = blob.y + "%";
+				});
+			}
+
+			animate(); // Start the animation loop
+		</script>
+	</body>
+</html>
