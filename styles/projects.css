@@ -142,7 +142,7 @@
 	margin-left: 1rem;
 	margin-top: 140px;
 	width: calc(100vw - 2rem);
-	overflow-x: scroll;
+	overflow-x: auto;
 }
 
 #projectLinks a {
@@ -246,6 +246,12 @@
 	scale: 0.975;
 }
 
+.projectTag.unavailable {
+	opacity: 0.35;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
 #projects .selected {
 	background-color: var(--first-accent-color);
 	color: var(--main-background-color);
@@ -257,11 +263,54 @@
 	scroll-snap-type: x mandatory;
 	align-items: center;
 	gap: 1rem;
-	overflow-x: scroll;
+	overflow-x: auto;
 	overflow-y: visible;
 	margin-left: 0;
 	margin-right: 0;
 	padding: 0;
+}
+
+/* Keep the scrollbars — they're the only way to pan these rows with a plain
+   vertical mouse wheel — but drop the opaque track so only a slim thumb shows. */
+#projectCarouselPhotos,
+#projectLinks,
+#projectScreen,
+#projectsTagsSelection {
+	scrollbar-width: thin; /* Firefox */
+	scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+#projectCarouselPhotos::-webkit-scrollbar,
+#projectLinks::-webkit-scrollbar,
+#projectScreen::-webkit-scrollbar,
+#projectsTagsSelection::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	background: transparent;
+}
+
+#projectCarouselPhotos::-webkit-scrollbar-track,
+#projectLinks::-webkit-scrollbar-track,
+#projectScreen::-webkit-scrollbar-track,
+#projectsTagsSelection::-webkit-scrollbar-track {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+#projectCarouselPhotos::-webkit-scrollbar-thumb,
+#projectLinks::-webkit-scrollbar-thumb,
+#projectScreen::-webkit-scrollbar-thumb,
+#projectsTagsSelection::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 999px;
+}
+
+#projectCarouselPhotos::-webkit-scrollbar-thumb:hover,
+#projectLinks::-webkit-scrollbar-thumb:hover,
+#projectScreen::-webkit-scrollbar-thumb:hover,
+#projectsTagsSelection::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(255, 255, 255, 0.45);
 }
 
 #projectCarouselPhotos > img {
@@ -272,17 +321,17 @@
 	margin: 1rem;
 	scroll-snap-align: center;
 	transform-origin: center center;
-	transform: scale(calc(calc(1 - var(--distance, 1)) * 0.9));
+	transform: scale(calc(calc(1 - var(--distance, 0)) * 0.9));
 	cursor: pointer;
 }
 
 #projectCarouselPhotos > img:hover {
-	transform: scale(calc(calc(1 - var(--distance, 1)) * 0.95));
+	transform: scale(calc(calc(1 - var(--distance, 0)) * 0.95));
 	filter: brightness(1.2);
 }
 
 #projectCarouselPhotos > img:active {
-	transform: scale(calc(calc(1 - var(--distance, 1)) * 0.85));
+	transform: scale(calc(calc(1 - var(--distance, 0)) * 0.85));
 	filter: brightness(1.5);
 }
 
@@ -439,7 +488,7 @@ h3.projectSection {
 	#projectsTagsSelection {
 		gap: 1.5rem;
 		flex-wrap: nowrap;
-		overflow-x: scroll;
+		overflow-x: auto;
 	}
 
 	#projectCarouselPhotos > img {

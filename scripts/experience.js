@@ -1,6 +1,6 @@
 const experienceData = [
 {
-		name: "Amazon | AGI Team",
+		name: "Amazon | Homepage Team",
 		timeline: "May 2025 - Present",
 		description: "Software Development Engineer",
 		logo: "images/amazon.png",
@@ -43,7 +43,7 @@ const experienceData = [
 	{
 		name: "SightPlan",
 		timeline: "October 2022 - May 2023",
-		description: "IOS Development Intern",
+		description: "iOS Development Intern",
 		image: "images/experienceCards/downtownOrlando.jpeg",
 		type: "work",
 		tags: ["Swift", "AWS", "xCode", "objectiveC", "swiftui"],

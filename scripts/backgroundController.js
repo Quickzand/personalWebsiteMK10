@@ -184,7 +184,7 @@ function animateExplosion() {
 setInterval(() => {
 	// Animate if its the end of the minute
 	const now = new Date();
-	if (now.getSeconds() == 0) {
+	if (now.getSeconds() == 0 && now.getHours() == 0 && now.getMinutes() == 0) {
 		animateExplosion();
 	}
 }, 1000);
@@ -220,6 +220,5 @@ $(window).on("resize", () => {
 
 // When the window loads, if the user has scrolled above the top, skip the intro
 if ($(window).scrollTop() > 20) {
-	console.log("Skipping intro...");
 	$("body").addClass("skipIntro");
 }

@@ -18,6 +18,18 @@ const programmingLanguages = [
 		accentColor: "#ebba30",
 	},
 	{
+		name: "TypeScript",
+		level: 0.8,
+		icon: "images/skills/typescript.svg",
+		accentColor: "#007acc",
+	},
+	{
+		name: "Swift",
+		level: 0.9,
+		icon: "images/skills/swift.svg",
+		accentColor: "#f05138",
+	},
+	{
 		name: "SQL",
 		level: 0.6,
 		icon: "images/skills/sql.png",
@@ -46,12 +58,6 @@ const programmingLanguages = [
 		level: 0.95,
 		icon: "images/skills/java.png",
 		accentColor: "#4f6dbc",
-	},
-	{
-		name: "GO",
-		level: 0.25,
-		icon: "images/skills/go.png",
-		accentColor: "#00a8e0",
 	},
 ];
 
@@ -105,6 +111,12 @@ const technologies = [
 		icon: "images/skills/aws.png",
 		accentColor: "#f7941e",
 	},
+	{
+		name: "Docker",
+		level: 0.75,
+		icon: "images/skills/docker.svg",
+		accentColor: "#00AADA",
+	},
 ];
 
 const profs = [
@@ -115,34 +127,22 @@ const profs = [
 		accentColor: "#1f93f4",
 	},
 	{
-		name: "Windows",
-		level: 0.9,
-		icon: "images/skills/windows.png",
-		accentColor: "#209ceb",
-	},
-	{
-		name: "Linux",
-		level: 0.8,
-		icon: "images/skills/linux.png",
-		accentColor: "#ed9a0a",
-	},
-	{
-		name: "Android",
-		level: 0.3,
-		icon: "images/skills/android.png",
-		accentColor: "#95bd2c",
-	},
-	{
 		name: "iOS",
 		level: 0.95,
 		icon: "images/skills/ios.png",
 		accentColor: "#1f93f4",
 	},
 	{
-		name: "Office Suite",
-		level: 0.95,
-		icon: "images/skills/office.png",
-		accentColor: "#e42407",
+		name: "Android",
+		level: 0.6,
+		icon: "images/skills/android.png",
+		accentColor: "#95bd2c",
+	},
+	{
+		name: "Linux",
+		level: 0.8,
+		icon: "images/skills/linux.png",
+		accentColor: "#ed9a0a",
 	},
 	{
 		name: "Adobe Photoshop",
@@ -155,12 +155,6 @@ const profs = [
 		level: 0.95,
 		icon: "images/skills/finalcut.png",
 		accentColor: "#fa55ae",
-	},
-	{
-		name: "Slack",
-		level: 0.75,
-		icon: "images/skills/slack.png",
-		accentColor: "#4a154b",
 	},
 	{
 		name: "Unity",
@@ -203,27 +197,29 @@ function buildSkills() {
     const technologiesContainer = $("#technologies");
     const profsContainer = $("#profs");
     var index = 0;
-    programmingLanguages.forEach((skill) => {
-        var temp = skillCardBuilder(skill); 
-        temp.css("--index", index);
-        temp.css("--random", Math.random() * 0.2 + 0.9);
-        programmingLanguagesContainer.append(temp);
-        index ++;
-    });
-
-    technologies.forEach((skill) => {
+    programmingLanguages.forEach((skill, i) => {
         var temp = skillCardBuilder(skill);
         temp.css("--index", index);
+        temp.css("--card-index", i);
+        temp.css("--random", Math.random() * 0.2 + 0.9);
+        programmingLanguagesContainer.append(temp);
+        index++;
+    });
+
+    technologies.forEach((skill, i) => {
+        var temp = skillCardBuilder(skill);
+        temp.css("--index", index);
+        temp.css("--card-index", i);
         temp.css("--random", Math.random() * 0.2 + 0.9);
         technologiesContainer.append(temp);
         index++;
-
     });
 
-    profs.forEach((skill) => {
+    profs.forEach((skill, i) => {
         var temp = skillCardBuilder(skill);
-     temp.css("--index", index);
-temp.css("--random", Math.random() * 0.2 + 0.9);
+        temp.css("--index", index);
+        temp.css("--card-index", i);
+        temp.css("--random", Math.random() * 0.2 + 0.9);
         profsContainer.append(temp);
         index++;
     });

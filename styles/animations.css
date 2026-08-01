@@ -31,6 +31,7 @@
 	}
 }
 
+
 .inFromLeft:not(.appear) {
 	transform: translateX(-100vw);
 	opacity: 0;
@@ -44,4 +45,73 @@
 .inFromRight:not(.appear) {
 	transform: translateX(100vw);
 	opacity: 0;
+}
+
+/* Skill rows: freeze container, animate cards individually */
+#skillsContainer .skillCardsContainer.inFromLeft:not(.appear),
+#skillsContainer .skillCardsContainer.inFromRight:not(.appear) {
+	transform: none;
+	opacity: 1;
+}
+
+#skillsContainer .skillCardsContainer.inFromLeft:not(.appear) .skillCard,
+#skillsContainer .skillCardsContainer.inFromRight:not(.appear) .skillCard {
+	opacity: 0;
+	animation: none;
+}
+
+@keyframes slideInLeft {
+	from { transform: translateX(-100vw); opacity: 0; }
+	to   { transform: translateX(0);      opacity: 1; }
+}
+
+@keyframes slideInRight {
+	from { transform: translateX(100vw); opacity: 0; }
+	to   { transform: translateX(0);     opacity: 1; }
+}
+
+#skillsContainer .skillCardsContainer.inFromLeft.appear .skillCard {
+	animation:
+		slideInLeft 0.7s calc(var(--card-index) * 60ms) ease-out both,
+		floatCards calc(5s * var(--random, 1)) calc(var(--card-index) * 60ms + 0.7s) ease-in-out infinite;
+}
+
+#skillsContainer .skillCardsContainer.inFromRight.appear .skillCard {
+	animation:
+		slideInRight 0.7s calc(var(--card-index) * 60ms) ease-out both,
+		floatCards calc(5s * var(--random, 1)) calc(var(--card-index) * 60ms + 0.7s) ease-in-out infinite;
+}
+
+/* Project filter tags: staggered slide in from left */
+#projectsTagsSelection .projectTag.inFromLeft.appear {
+	animation: slideInLeft 0.9s calc(var(--tag-index, 0) * 65ms) ease-out backwards;
+}
+
+/* Project cards: staggered slide in per row, then release transform for open/close transition */
+#projectsContainer .projectPreview.inFromLeft.appear {
+	animation: slideInLeft 1s calc(var(--card-index, 0) * 120ms) ease-out backwards;
+}
+
+#projectsContainer .projectPreview.inFromRight.appear {
+	animation: slideInRight 1s calc(var(--card-index, 0) * 120ms) ease-out backwards;
+}
+
+/* Respect users who ask their OS to limit animation. The site leans heavily on
+   infinite float loops, a looping gradient and 100vw slide-ins, all of which are
+   vestibular triggers. */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+
+	.inFromLeft,
+	.inFromRight {
+		transform: none;
+		opacity: 1;
+	}
 }

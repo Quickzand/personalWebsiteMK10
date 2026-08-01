@@ -1,7 +1,6 @@
 // Get any element thats .inFromLeft or .inFromRight and add the .appear class to it when the scroll position is greater than the top of the element minus the window height
 
 $(window).scroll(updateIntroAnimation);
-// On load do the same
 $(document).ready(updateIntroAnimation);
 
 function updateIntroAnimation() {
@@ -13,7 +12,8 @@ function updateIntroAnimation() {
 			$(this).addClass("appear");
 		}
 	});
+
 }
 
-// Add in from left to every h3
 $("h2").addClass("inFromLeft");
+$("#skillsContainer h3").addClass("inFromLeft");

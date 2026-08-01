@@ -1,5 +1,5 @@
 const missionStatement =
-	"Hey, I'm Matthew! I am a Software Engineer, with an extensive background in Fullstack and Mobile Development. My goal is to create code with perspective and purpose - and to ultimately, make the world a more human friendly place. Here's how I've been working towards that goal:";
+	"I'm Matthew, a Software Engineer with a strong foundation in Fullstack and Mobile Development. I build thoughtful, well-crafted software - driven by a belief that good engineering should be both technically sound and deeply human. Here's a look at what I've been building:";
 
 const gradientTexts = [
 	"Fullstack",

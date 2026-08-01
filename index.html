@@ -11,21 +11,19 @@
 		<link rel="stylesheet" href="styles/experience.css" />
 		<link rel="stylesheet" href="styles/projects.css" />
 		<link rel="stylesheet" href="styles/skills.css" />
-		<link rel="stylesheet" href="styles/contact.css" />
 		<link rel="stylesheet" href="styles/misc.css" />
 
 		<script src="scripts/jquery.js"></script>
 		<script src="scripts/jquery.cookie.js"></script>
-		<script src="scripts/nav.js" async defer></script>
-		<script src="scripts/missionStatement.js" async defer></script>
-		<script src="scripts/experience.js" async defer></script>
-		<script src="scripts/projects.js" async defer></script>
-		<script src="scripts/skills.js" async defer></script>
-		<script src="scripts/socials.js" async defer></script>
-		<script src="scripts/colorPalettes.js" async defer></script>
-		<script src="scripts/contact.js" async defer></script>
-		<script src="scripts/animateOnScroll.js" async defer></script>
-		<script src="scripts/imageModal.js" async defer></script>
+		<script src="scripts/nav.js" defer></script>
+		<script src="scripts/missionStatement.js" defer></script>
+		<script src="scripts/experience.js" defer></script>
+		<script src="scripts/projects.js" defer></script>
+		<script src="scripts/skills.js" defer></script>
+		<script src="scripts/socials.js" defer></script>
+		<script src="scripts/colorPalettes.js" defer></script>
+		<script src="scripts/animateOnScroll.js" defer></script>
+		<script src="scripts/imageModal.js" defer></script>
 	</head>
 	<body>
 		<nav>
@@ -44,7 +42,6 @@
 				<a href="#experience" class="navButton">Experience</a>
 				<a href="#skills" class="navButton">Skills</a>
 				<a href="#projects" class="navButton">Projects</a>
-				<a href="#contact" class="navButton">Contact</a>
 			</div>
 		</nav>
 		<div id="colorPalettes">
@@ -78,7 +75,6 @@
 			<a href="#experience" class="mobileNavButton">Experience</a>
 			<a href="#skills" class="mobileNavButton">Skills</a>
 			<a href="#projects" class="mobileNavButton">Projects</a>
-			<a href="#contact" class="mobileNavButton">Contact</a>
 		</div>
 		<header>
 			<svg
@@ -145,10 +141,10 @@
 					d="M 226 323.001831 C 226 323.001831 158.256134 311.109192 101 324" />
 			</svg>
 			<div class="glassy" id="introBox">
-				<h1>Howdy, I'm <span class="gradientText"> Matthew Sand </span>🤠</h1>
+				<span id="introName" class="gradientText">Matthew Sand</span>
 				<hr />
-				<h3>FullStack Software Engineer</h3>
-				<div id="socials"></div>
+				<div id="subtitle">Software Development Engineer</div>
+<div id="socials"></div>
 			</div>
 			<canvas id="backgroundCanvas"> </canvas>
 			<div id="backgroundCanvasFilter"></div>
@@ -173,8 +169,10 @@
 							<iframe src="resume.pdf"></iframe>
 							<div id="resumeButtons">
 								<a href="resume.pdf" target="_blank">Open</a>
-								<a href="">Download</a>
-								<a href="">Share</a>
+								<a href="resume.pdf" download="Matthew Sand Resume.pdf"
+									>Download</a
+								>
+								<a href="resume.pdf" id="resumeShare">Share</a>
 							</div>
 						</div>
 					</div>
@@ -192,11 +190,11 @@
 				<h2>Skills</h2>
 				<div id="skillsContainer">
 					<h3>Programming Languages</h3>
-					<div id="programmingLanguages" class="skillCardsContainer"></div>
+					<div id="programmingLanguages" class="skillCardsContainer inFromLeft"></div>
 					<h3>Technologies</h3>
-					<div id="technologies" class="skillCardsContainer"></div>
-					<h3>Proficiencies</h3>
-					<div id="profs" class="skillCardsContainer"></div>
+					<div id="technologies" class="skillCardsContainer inFromRight"></div>
+					<h3>Platforms</h3>
+					<div id="profs" class="skillCardsContainer inFromLeft"></div>
 				</div>
 			</section>
 
@@ -206,29 +204,6 @@
 				<div id="projectsContainer"></div>
 			</section>
 
-			<section id="contact">
-				<h2>Contact</h2>
-				<form onsubmit="event.preventDefault(); attemptSubmission();">
-					<div class="">
-						<input type="text" name="name" id="name" placeholder="" />
-						<label for="name">Name</label>
-					</div>
-					<div class="">
-						<input type="text" name="email" id="email" placeholder="" />
-						<label for="email">Email</label>
-					</div>
-					<div class="">
-						<label for="message"></label>
-						<textarea
-							name="message"
-							placeholder="Your message..."
-							id="message"></textarea>
-					</div>
-					<div id="contactSubmit">
-						<button type="submit">Send</button>
-					</div>
-				</form>
-			</section>
 		</div>
 		<div id="projectScreen">
 			<div id="projectHeader" class="leftSideSpread">
@@ -251,11 +226,16 @@
 	</body>
 	<script src="scripts/backgroundController.js"></script>
 	<script>
-		document.write(
-			'<script src="http://' +
-				(location.host || "localhost").split(":")[0] +
-				':35729/livereload.js?snipver=1"></' +
-				"script>"
-		);
+		// Local dev only — livereload is served over plain http and would be
+		// blocked as mixed content on the deployed https site.
+		if (
+			location.hostname === "localhost" ||
+			location.hostname === "127.0.0.1"
+		) {
+			var livereload = document.createElement("script");
+			livereload.src =
+				"http://" + location.hostname + ":35729/livereload.js?snipver=1";
+			document.body.appendChild(livereload);
+		}
 	</script>
 </html>

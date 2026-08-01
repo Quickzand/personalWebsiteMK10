@@ -1,4 +1,67 @@
 {
+    "shrunkenDown": {
+        "name": "Shrunken Down",
+        "time": "July 2026",
+        "preview": "images/projects/shrunkenDownPreview.png",
+        "tags": [
+            {
+                "name": "GMTK Game Jam 2026",
+                "highlighted": "true"
+            },
+            {
+                "name": "Godot"
+            },
+            {
+                "name": "GDScript"
+            },
+            {
+                "name": "Game Design"
+            }
+        ],
+        "links": [
+            {
+                "type": "itch",
+                "href": "https://colbyjack1134.itch.io/shrunken-down"
+            },
+            {
+                "type": "github",
+                "href": "https://github.com/ColbyJack1134/gmtk-26",
+                "name": "Github Repo"
+            }
+        ],
+        "sections": [
+            {
+                "title": "Description",
+                "content": "You are a wizard! Shrunken Down is a fast-paced action platformer built in 96 hours for the GMTK Game Jam 2026. You jump, slash, and shoot your way through monster-filled caves racing to find a cure for your shrinking - the smaller you get, the harder it becomes to defend yourself, so every second counts. The game plays with the jam's theme through an inventory that shrinks along with you, forcing constant decisions about which weapons and items are worth keeping."
+            },
+            {
+                "title": "The Jam",
+                "content": "I built Shrunken Down with my friends Ayden and Spencer as team Project Zeta. We developed the whole game in Godot over one weekend - designing, programming, and polishing a complete gameplay loop with multiple weapons, spells, and randomly generated levels. I focused heavily on the game's user interface, having to solve interesting problems in making such a heavily UI focused game still feel fast paced an intuitive. I am particularly proud of the automated dual hotbar system, allowing users to control spells and weapons at the same time, and intuitively activate and select them without worrying about opening their inventory to organize it all during gameplay.\n\nWhen judging our game, players praised the weapon variety and the tension of managing an ever-shrinking backpack, with one reviewer describing it as feeling \"like Hollow Knight with an AK47\" (as a Silksong fan, a massive compliment). Out of ~10,000 entries, Shrunken Down placed in the top 800 for Enjoyment, putting us in the top 8% of entries."
+            },
+            {
+                "type": "collaborators",
+                "collaborators": [
+                    {
+                        "name": "Ayden Colby",
+                        "href": "https://aydencolby.com",
+                        "imgSrc": "images/collaborators/ayden.jpg"
+                    },
+                    {
+                        "name": "Spencer Kilcoyne",
+                        "href": "https://www.instagram.com/subsonic_spencer/",
+                        "imgSrc": "images/collaborators/spencer.jpg"
+                    }
+                ]
+            }
+        ],
+        "images": [
+            "images/projects/shrunkenDown/shrunkenDownCover.png",
+            "images/projects/shrunkenDown/shrunkenDown1.png",
+            "images/projects/shrunkenDown/shrunkenDown2.png",
+            "images/projects/shrunkenDown/shrunkenDown3.png",
+            "images/projects/shrunkenDown/shrunkenDown4.png"
+        ]
+    },
     "itemize": {
         "name": "Itemize",
         "time": "September 2024",
@@ -35,15 +98,15 @@
         "sections": [
             {
                 "title": "Description",
-                "content": "Itemize streamlines how you decide what cook with with what you have, even if you don't have a clue. Our team has spent a lot of time staring at our fridges not sure what to cook, or even what we really have so for our submission to Shellhacks 2024, we decided to focus on this. Itemize arose from a desire to organize one of the most important, and most expensive, parts of our lives."
+                "content": "Itemize streamlines how you decide what to cook with what you have — even when you have no idea where to start. Our team spent a lot of time staring into our fridges, unsure what to make or even what we actually had, so for our ShellHacks 2024 submission we decided to tackle exactly that. Itemize arose from a desire to bring order to one of the most important — and most expensive — parts of our daily lives."
             },
             {
                 "title": "Building the App",
-                "content": "Itemize utilizes SwiftUI for all frontend functionality, and a PHP backend for planned cloud storage. At the core, Itemize uses the GPT API to analyze receipt scans, categorize data, and come up with new recipes. A lot of our time was spent figuring out a flow that felt natural, yet not too overly simple to be not useful. The balance was difficult to strike but we ultimately settled on an app with comfortable user experience, and large utility. Our MVP is completely functional by the end of this hackathon, and has resulted in an app all of our team members would be delighted to use. Ultimately, it was most rewarding to see how our combined efforts came together to make such a full product."
+                "content": "Itemize uses SwiftUI for all frontend functionality and a PHP backend for planned cloud storage. At its core, the app leverages the GPT API to analyze receipt scans, categorize items, and suggest new recipes. Much of our time went into crafting a flow that felt natural without being too simplistic to be useful — a balance that was difficult to strike, but one we're proud of. Our MVP is fully functional, and the result is an app every member of our team would genuinely use. It was most rewarding to see how our combined efforts came together into such a complete product."
             },
             {
-                "title": "The future...",
-                "content": "We all had the opportunity to learn some incredibly useful and cool technologies throughout this hackathon, such as SwiftUI and PHP, as well as research into new technologies like Progressive Web Apps. Everything we gained throughout this experience will be indelibly useful as we continue to develop Itemize in the future. Eventually, we plan to fully integrate our backend cloud storage, and ultimately have a multi-platform system for ease of usage. Ideally, the general flow of the app would not change, but extra modalities and UI tweaks and capabilities are planned in the future."
+                "title": "The Future",
+                "content": "Throughout this hackathon, we each had the chance to work with genuinely useful technologies — SwiftUI and PHP among them — as well as explore new areas like Progressive Web Apps. Everything we gained will be invaluable as we continue developing Itemize. Looking ahead, we plan to fully integrate our backend cloud storage and expand the app to a multi-platform experience. The core flow will largely stay the same, but additional modalities, UI refinements, and expanded capabilities are all on the roadmap."
             },
             {
                 "type": "collaborators",
@@ -83,13 +146,13 @@
                 "name": "Electron"
             },
             {
-                "name": "Node"
+                "name": "Node.js"
             },
             {
-                "name": "Websockets"
+                "name": "WebSockets"
             },
             {
-                "name": "Javascript"
+                "name": "JavaScript"
             },
             {
                 "name": "HTML"
@@ -117,7 +180,7 @@
         "sections": [
             {
                 "title": "Description",
-                "content": "Gizmo is your digital bridge between your phone and computer, revolutionizing the way you interact with your devices. With Gizmo, you can seamlessly execute actions on your computer right from your phone, making multitasking a breeze. Whether you're looking to quickly launch a Siri shortcut, trigger a keyboard command, or even insert a frequently used text snippet, Gizmo has got you covered. Designed with user-friendliness in mind, Gizmo allows you to customize and create your own actions tailored to your needs. No more shuffling between devices or navigating through complex menus. With a few taps on your phone, you can have your computer respond instantly."
+                "content": "Gizmo is your digital bridge between your phone and your computer, transforming the way you interact with your devices. With Gizmo, you can seamlessly execute actions on your computer right from your phone — making multitasking effortless. Whether you want to launch a Siri shortcut, trigger a keyboard command, or insert a frequently used text snippet, Gizmo has you covered. Designed with user-friendliness in mind, Gizmo lets you customize and create your own actions tailored to your exact workflow. No more juggling between devices or navigating complex menus — a few taps on your phone and your computer responds instantly."
             },
             {
                 "type": "header",
@@ -127,7 +190,7 @@
                 "type": "imageParagraph",
                 "imgSrc": "images/projects/gizmo/modalities.gif",
                 "title": "Modalities",
-                "content": "One of the benefits of Gizmo being an app rather than a physical device, such as the StreamDeck, is that it can be set up to be used in almost an infinite number of ways. I wanted to make sure I utilized this unique benefit when developing Gizmo, so customization was always at the forefront of my mind. Every action can be attached to unique input methods, such as a button, toggle, knob, or dragger. Much work was done to ensure that these input methods were intuitive and easy to use, so that the user could quickly and easily set up their actions with any kind of input. Each kind of input can be styled to look however a user may like, and can be placed and resized anywhere on their screens."
+                "content": "One of the key advantages of Gizmo being an app rather than a physical device — like the Stream Deck — is that it can be configured in nearly infinite ways. I wanted to make sure I leaned into that when building it, so customization was always at the forefront of development. Every action can be bound to a unique input type: button, toggle, knob, or dragger. Each was designed to be intuitive and easy to configure, so users can set up their workspace quickly. Inputs can be styled however a user likes, and placed or resized freely anywhere on their screen."
             }
         ],
         "images": [
@@ -146,8 +209,7 @@
                 "highlighted": "true"
             },
             {
-                "name": "Figma",
-                "icon": "images/tags/html.svg"
+                "name": "Figma"
             }
         ],
         "links": [
@@ -165,7 +227,7 @@
         "sections": [
             {
                 "title": "Description",
-                "content": "POOSDker is a semester-long project I worked on with my classmates. We built an game in SwiftUI utilizing custom networking infrastructure to allow for local multiplayer poker."
+                "content": "POOSDKer is a semester-long project I built with my classmates. We developed a fully functional poker game in SwiftUI, complete with custom networking infrastructure to support local multiplayer."
             },
             {
                 "type": "collaborators",
@@ -208,16 +270,13 @@
                 "highlighted": "true"
             },
             {
-                "name": "HTML",
-                "icon": "images/tags/html.svg"
+                "name": "HTML"
             },
             {
-                "name": "CSS",
-                "icon": "images/tags/css.svg"
+                "name": "CSS"
             },
             {
-                "name": "JavaScript",
-                "icon": "images/tags/javascript.svg"
+                "name": "JavaScript"
             }
         ],
         "links": [
@@ -234,23 +293,23 @@
         "sections": [
             {
                 "title": "Description",
-                "content": "StoryForge is my groups submission for the ShellHacks 2023 hackathon. Its a webapp, which allows users to play Dungeons and Dragons with an AI dungeon-master, which keeps track of everything, while sculpting a story. Players are able to interract however they like by just typing to the Dungeon Master, but we also added quality of life quick actions, as well as environmental effects on screen depending on where they are in game."
+                "content": "StoryForge is my group's submission for ShellHacks 2023. It's a web app that lets users play Dungeons & Dragons with an AI dungeon master who tracks the full game state while shaping a dynamic story. Players can interact however they like by typing freely, and we layered in quality-of-life quick actions as well as on-screen environmental effects that react to where they are in the game."
             },
             {
-                "title": "How we built it",
-                "content": "We built our project by creating a web app that enables the user to set up their character and make decisions. From there we connected all decisions to the ChatGPT-4 API and requested it to generate JSON file responses that contain different states and decisions."
+                "title": "How We Built It",
+                "content": "We built a web app that walks the user through setting up their character and making decisions throughout the adventure. Every player choice is routed to the ChatGPT-4 API, which we configured to return structured JSON responses representing different game states and branching outcomes."
             },
             {
                 "title": "Inspiration",
-                "content": "The inspiration for our project came from playing Dungeons and Dragons, a game that we all find incredibly fun, but doesn't have any way to play by yourself. So we sought to make that."
+                "content": "Our inspiration came from Dungeons and Dragons — a game we all love, but one with no real way to play solo. We wanted to build a version you could experience by yourself, with an AI that brings the full dungeon-master experience to life."
             },
             {
                 "title": "Challenges",
-                "content": "A challenge we ran into was implementing the ChatGPT API in a way that would return consistently formatted JSON files that we would be able to handle, as well as making our API calls contain all necessary information to get our desired effect."
+                "content": "Our biggest challenge was getting the ChatGPT API to return consistently structured JSON we could reliably parse, while ensuring our prompts contained enough context to produce the gameplay experience we were after."
             },
             {
-                "title": "What we're proud of",
-                "content": "We are proud of our ability to use Git properly to allow for collaboration on the website and good version control of our code. Setting up the chatGPT-4 API was also something we are proud of because there was so much conflicting information on how to implement it."
+                "title": "What We're Proud Of",
+                "content": "We're proud of how effectively we used Git to stay coordinated and maintain clean version control throughout the project. Getting the ChatGPT-4 API working cleanly was also a real win — there was a surprising amount of conflicting information out there on how to implement it properly."
             },
             {
                 "type": "collaborators",
@@ -290,20 +349,16 @@
                 "highlighted": "true"
             },
             {
-                "name": "Electron",
-                "icon": "images/tags/electron.svg"
+                "name": "Electron"
             },
             {
-                "name": "Node.js",
-                "icon": "images/tags/node.svg"
+                "name": "Node.js"
             },
             {
-                "name": "Python",
-                "icon": "images/tags/python.svg"
+                "name": "Python"
             },
             {
-                "name": "React Native",
-                "icon": "images/tags/pwa.svg"
+                "name": "React Native"
             }
         ],
         "links": [
@@ -325,15 +380,15 @@
         "sections": [
             {
                 "title": "Description",
-                "content": "Dequeue is my team’s submission for a semester long hackathon held by KnightHacks. It’s inspiration began from the Stream deck, a device used by streamers that acts as a visual way to interact with shortcuts on your computer. Rather than having to memorize every possible computer shortcut or buy an expensive device such as the stream deck, Dequeue allows you to display and quickly access shortcuts right on your phone. Dequeue was build using React Native for the mobile phone app and Electron for the desktop app, allowing it to run on numerous platforms with ease. All data is stored locally on the computer and transmitted back and forth via LAN to the phone."
+                "content": "Dequeue is my team's submission for a semester-long hackathon hosted by KnightHacks. The idea was drawn from the Stream Deck — a device streamers use to trigger shortcuts and macros from a dedicated panel. Rather than memorizing every shortcut or buying expensive hardware, Dequeue lets you display and execute shortcuts right from your phone. The app was built with React Native for mobile and Electron for desktop, enabling it to run across multiple platforms with ease. All data is stored locally on the computer and transmitted to the phone over LAN."
             },
             {
                 "title": "Inspiration",
-                "content": "The inspiration for our project came from the stream deck, an expensive piece of equipment streamers use to control tools and execute shortcuts on their computers. It essentially serves as an additional keyboard that can be programmed for macros or other actions. We thought about a way we could create something similar using an app on our phone and our computer, without the expensive price tag."
+                "content": "The Stream Deck — an expensive piece of hardware that lets streamers program macros and trigger shortcuts from a dedicated panel — was our starting point. We asked ourselves: could we build something that does the same thing using just a phone and a computer, without the price tag?"
             },
             {
                 "title": "Challenges",
-                "content": "The main challenge we ran into was the communication between the phone and the computer and the best way to allow the devices to communicate. An additional challenge we had was getting the desktop app to record the keys the way we wanted, allowing it to record the modifiers in addition to the characters."
+                "content": "Our main challenge was figuring out the best approach for communication between the phone and the desktop. We also spent significant time getting the desktop app to accurately capture key input — particularly ensuring it could detect modifier keys alongside character keys."
             },
             {
                 "type": "collaborators",
@@ -365,7 +420,7 @@
         "sections": [
             {
                 "title": "Description",
-                "content": "WikiWhat is a game I built for my friends and I. The goal is, given only images from a wikiHow article, guess what article the images correspond to. The project randomly pulls the article and images contained within it, as well as pulling the names of other, incorrect articles. This project had me dealing a lot with game design as well as database development and developing a python backend."
+                "content": "WikiWhat is a game I built for my friends and me. The goal is simple: given only images pulled from a wikiHow article, guess which article they came from. The game randomly fetches an article and its images, then surfaces the names of several incorrect articles as decoys. Building it involved a lot of work in game design, database development, and writing a Python backend."
             }
         ],
         "links": [
@@ -400,7 +455,7 @@
         "sections": [
             {
                 "title": "Description",
-                "content": "A custom directory system I made to run on my LocalHost. It allows me to easily navigate to any of my projects, navigate and sort folders without clicking, and even launch projects with just my keybaord."
+                "content": "A custom directory system I built to run on my localhost. It lets me navigate to any of my projects, browse and sort folders without clicking, and launch projects entirely from the keyboard."
             }
         ],
         "tags": [
@@ -428,7 +483,7 @@
         "sections": [
             {
                 "title": "Description",
-                "content": "Meets Stories is a web application that allows users to create and share stories with their friends. Users can create stories by uploading images and videos, and then share them with their friends. Meets Stories was built using React, Node.js, Express, and MongoDB."
+                "content": "Meets Stories is a web application that lets users create and share stories with their friends. Users build stories by uploading images and videos, then share them with their social circle. The project was built using React, Node.js, Express, and MongoDB."
             }
         ],
         "tags": [
@@ -445,7 +500,7 @@
                 "name": "PHP"
             },
             {
-                "name": "mySQL"
+                "name": "MySQL"
             }
         ],
         "images": [

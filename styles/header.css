@@ -8,11 +8,12 @@ header {
 
 #introBox {
 	display: inline-block;
-	padding: 1rem;
+	padding: 2rem;
 	position: absolute;
-	right: min(100px, 25%);
+	right: min(100px, 15%);
 	top: 50%;
 	--floating-duration: 5s;
+	--floating-distance: -10px;
 	animation: slideInFromBottom 2s var(--peak-in-head-duration) ease-in-out
 			forwards,
 		floating var(--floating-duration) calc(var(--peak-in-head-duration) + 2s)
@@ -109,23 +110,76 @@ header {
 	transform: translateY(-1rem);
 }
 
+#introName {
+	display: block;
+	font-size: clamp(2.5rem, 5vw, 4.5rem);
+	font-family: var(--header-font);
+	font-weight: 800;
+	line-height: 1.1;
+}
+
+#subtitle {
+	font-size: 1.3rem;
+	font-family: var(--title-font);
+	font-weight: 400;
+	letter-spacing: 0.08em;
+	margin-bottom: 1.5rem;
+}
+
+#introBio {
+	font-size: 0.95rem;
+	font-family: var(--body-font);
+	font-weight: 400;
+	margin: 0 0 1.25rem 0;
+	line-height: 1.6;
+	opacity: 0.75;
+}
+
 #socials {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
 	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	flex-wrap: wrap;
 }
 
 .socialButton {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 	cursor: pointer;
 	fill: var(--foreground-color);
-	width: 1.5rem;
-	aspect-ratio: 1;
-	transition: all 0.25s ease-in-out;
+	color: var(--foreground-color);
+	background-color: var(--glassy-background-color);
+	backdrop-filter: blur(30px);
+	-webkit-backdrop-filter: blur(30px);
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--glassy-box-shadow);
+	transition: fill 0.2s, color 0.2s, scale 0.15s;
 }
 
 .socialButton:hover {
 	fill: var(--accentColor);
+	color: var(--accentColor);
+	scale: 1.05;
+}
+
+.socialButton:active {
+	scale: 0.95;
+}
+
+.socialButton svg {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+}
+
+.socialButton span {
+	font-family: var(--title-font);
+	font-size: 0.9rem;
+	letter-spacing: 0.05em;
 }
 
 /* Anything below 750px  */

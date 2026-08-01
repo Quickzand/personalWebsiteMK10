@@ -19,7 +19,7 @@
 		var(--second-accent-color) 50%,
 		var(--first-accent-color) 100%
 	);
-	--title-font: "Share Tech Mono ", monospace;
+	--title-font: "Share Tech Mono", monospace;
 	--header-font: "Poppins", sans-serif;
 	--body-font: "Nunito", sans-serif;
 	--foreground-color: #f0f0f0;
@@ -195,7 +195,6 @@ h3 {
 	background-image: var(--main-looping-gradient);
 	background-size: 200% 100%;
 	background-position: 0 0;
-	background-attachment: fixed;
 	animation: loopBg 5s linear infinite;
 }
 
