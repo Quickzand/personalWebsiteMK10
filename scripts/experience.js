@@ -1,5 +1,11 @@
 const experienceData = [
-{
+	{
+		name: "GMTK Game Jam",
+		timeline: "July 2026",
+		image: "images/experienceCards/gmtk.jpg",
+		type: "competition",
+	},
+	{
 		name: "Amazon | Homepage Team",
 		timeline: "May 2025 - Present",
 		description: "Software Development Engineer",
@@ -106,6 +112,15 @@ const experienceData = [
 ];
 
 var experienceTypes = [];
+
+// The filter chips show in this order no matter how experienceData is sorted;
+// otherwise the order depends on whichever type happens to appear first.
+const experienceTypeOrder = ["work", "competition", "education"];
+
+function experienceTypeRank(type) {
+	var rank = experienceTypeOrder.indexOf(type);
+	return rank === -1 ? experienceTypeOrder.length : rank;
+}
 
 var selectedExperienceTypes = [];
 
@@ -214,7 +229,10 @@ function toggleExperienceType(type) {
 function generateExperienceTypeFilters() {
 	const experienceTypesContainer = $("#experienceTypes");
 	experienceTypesContainer.empty();
-	experienceTypes.forEach((type) => {
+	const orderedTypes = experienceTypes
+		.slice()
+		.sort((a, b) => experienceTypeRank(a) - experienceTypeRank(b));
+	orderedTypes.forEach((type) => {
 		var countOfType = 0;
 		$(".experienceCardType").each(function () {
 			if ($(this).text().toLowerCase() === type) {

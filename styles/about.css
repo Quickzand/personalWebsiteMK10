@@ -24,7 +24,10 @@
 	display: inline-block;
 	line-height: 1;
 	width: 0.25em;
-	height: 1.25em;
+	height: 1em;
+	/* Baseline-aligned boxes sit entirely above the baseline, which left the
+	   cursor floating above the caps. Drop it so it straddles the text. */
+	vertical-align: -0.15em;
 	margin-left: 0.25em;
 	background: var(--foreground-color);
 	animation: blink cubic-bezier(0.23, 1, 0.32, 1) 1s infinite;
@@ -42,7 +45,9 @@
 	flex-direction: row;
 	align-items: stretch;
 	gap: 20px;
-	max-height: 420px;
+	/* No max-height: the mission statement is sized by its own (invisible)
+	   placeholder text, so capping this makes the typed text spill out of the
+	   box whenever the copy is longer than the cap. */
 }
 
 #resumeContainer {
